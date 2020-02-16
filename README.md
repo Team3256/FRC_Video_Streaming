@@ -15,6 +15,8 @@ For OpenCV, it is a library of programming functions mainly aimed at real-time c
 
 ## Setup
 
+### Raspbian System
+
 Before starting setup, we need to write raspbian system into raspberry pi MicroSD card.
 [Raspbian System Installation](https://www.raspberrypi.org/documentation/installation/installing-images/)
 
