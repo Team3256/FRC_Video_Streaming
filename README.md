@@ -45,8 +45,28 @@ We need to add Gstreamer's PPA (Personal Package Archive) before we download eve
 After that, type:
 
      apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
-     
-Since we connect our webcam
-    
-# Haven't Compeleted yet!
+ 
+Use 
 
+     gst-inspect-1.0 --version
+
+To check Gstreamer is successful downloaded or not.
+
+
+##### RTSP Sever
+
+What is RTSP? [RTSP, Wikipedia](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol)
+
+Download and configure the RTSP Server
+1. Go to (https://gstreamer.freedesktop.org/src/gst-rtsp-server/), select the Gstreamer version you are using.
+2. Download .tar.xz file
+3. Extract the file
+4. In terminal, go to the folder you have extracted (use "cd" command)
+5. Type ./configure
+6. Once you finished, type make
+
+Note: If there is a error message said that "No package 'Glib-2.0' found" after the configuration, type:
+
+    sudo apt-get install libglib2.0-dev
+
+Then, re-type the ./configure again
