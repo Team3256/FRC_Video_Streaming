@@ -2,6 +2,11 @@
 
 **This is the live video streaming project based on Gstreamer and OpenCV. We connect our webcams to different raspberry pi 4 and raspberry pi will send the streaming video to the Windows cilent.**
 
+Some useful links:
+* [Useful suggestion](https://rianadon.github.io/blog/2019/04/04/guide-to-h264-streaming-frc.html)
+* [OpenCV and Gstreamer (C++)](https://github.com/tik0/mat2gstreamer)
+* [Shared memory](https://github.com/tik0/mat2gstreamer)
+
 GStreamer is a pipeline-based multimedia framework and software that links together a wide variety of media processing systems to complete complex workflows. It contains enormous useful commends to decode, encode, and transport your live video. 
 
 [Gstreamer Introduction](https://gstreamer.freedesktop.org/)
@@ -70,3 +75,9 @@ Note: If there is a error message said that "No package 'Glib-2.0' found" after 
     sudo apt-get install libglib2.0-dev
 
 Then, re-type the ./configure again
+
+### OpenCV
+
+Reason of using OpenCV: Write a program to start and manage different video streams at the same time
+
+First of all, we need to download Visual Studio on Windows laptop. Link: [Visual Studio Download](https://visualstudio.microsoft.com/zh-hans/vs/)
