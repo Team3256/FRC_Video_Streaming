@@ -87,7 +87,7 @@ This command takes the FFMpeg UDP stream and turns it into a SRT stream which ca
 
 This command takes the local SRT stream on port 4201 so you can view it in a window.
 
-![GIF of mp4 and SRT](https://i.imgur.com/2MeLVuN.gif)
+![GIF of mp4 and SRT](https://i.imgur.com/t3KqH43.gif)
 
 **My Observations** The stream works great, the video appears to have no lag in it. Since I didn't have a camera to test during this time, the video should be a good representation of what a webcam stream would be like. The next thing to test would be using an actual webcam over an actual network. 
 
