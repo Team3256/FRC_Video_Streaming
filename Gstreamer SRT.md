@@ -39,7 +39,7 @@ Receiver: `gst-launch-1.0 srtsrc uri=srt://10.78.49.32:8888 ! decodebin ! autovi
 
 ## NOTE: This method uses Gstreamer for **both** sender and receiver. However, you do not need to use Gstreamer to send, especially if you are testing.
 
-# How to use gst-live-transmit
+# How to use srt-live-transmit
 If you installed SRT using the GitHub link above, it also installed gst-live-transmit, which is a simplified version of the Gstreamer sender command.
 
 How it works is that it takes in a UDP stream and spits out a SRT stream. For example, let's say you don't want to use videotestsrc, so you create a ffmpeg udp stream to display bars:
@@ -57,4 +57,36 @@ Notice that it is listening to the UDP port 1234, and transmitting on the SRT po
 You can use VLC or Gstreamer to pull up the srt stream, just as if you were using Gstreamer.
 
 For more information about gst-live-transmit: https://github.com/Haivision/srt/blob/master/docs/srt-live-transmit.md
+
+# Testing 
+First, I tried to display videotestsrc through SRT, over the network, which worked. Here are the commands I used (similar to example commands):
+
+Sender: `gst-launch-1.0 videotestsrc ! video/x-raw, height=480, width=640 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264, profile=high ! mpegtsmux ! srtsink uri=srt://:8888/`
+
+Receiver: `gst-launch-1.0 srtsrc uri=srt://10.78.49.32:8888 ! decodebin ! autovideosink`
+
+**My Observations:** The stream works fine, although I did notice at times that there was some latency introduced. I assume this is due to the network performance & the fact I was using a virtual machine, not indicative of what real performance would look like.
+
+Next, I used ffmpeg to stream an mp4 video to a UDP stream, then srt-live-transmit to convert UDP to SRT, and Gstreamer to read the SRT stream all on the same computer (expect similar performance over network). Here are the commands I used:
+
+**For FFMpeg:** `ffmpeg -re -i “Final.mp4” -pix_fmt yuv420p -vsync 1 -threads 0 -vcodec libx264 -r 30 -g 60 -sc_threshold 0 -b:v 640k -bufsize 768k -maxrate 800k -preset veryfast -profile:v baseline -tune film -acodec aac -b:a 128k -ac 2 -ar 48000 -af "aresample=async=1:min_hard_comp=0.100000:first_pts=0" -bsf:v h264_mp4toannexb -f mpegts udp://127.0.0.1:1234?pkt_size=1316`
+
+"Final.mp4" is the video file we are playing from, assuming it is in the same folder from which the command is launched.
+
+There is also no real reason that port 1234 is used, nearly any port should work.
+
+**For srt-live-transmit**  `srt-live-transmit udp://:1234 srt://:4201 -v`
+
+This command takes the FFMpeg UDP stream and turns it into a SRT stream which can be accessed:
+
+**For gstreamer** `gst-launch-1.0 srtsrc uri=srt://127.0.0.1:4201 ! decodebin ! autovideosink`
+
+This command takes the local SRT stream on port 4201 so you can view it in a window.
+
+**My Observations** The stream works great, the video appears to have no lag in it. Since I didn't have a camera to test during this time, the video should be a good representation of what a webcam stream would be like. The next thing to test would be using an actual webcam over an actual network. 
+
+
+
+
+
 
