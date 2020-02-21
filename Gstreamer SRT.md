@@ -4,6 +4,7 @@ Currently our camera stream uses RTSP, the real time streaming protocol, which i
 
 # SRT (Secure Reliable Transport)
 **Benefits:** Compared to RTSP, more reliable, more secure, and less latency, especially with congested networks (ie multiple cameras using the same network)
+
 **Drawbacks:** Still experimental, for ex. the newest version of Raspbian does not natively contain the latest version of Gstreamer which supports SRT
 
 # How to Install
@@ -13,6 +14,7 @@ Also need to install the srt SDK: https://github.com/Haivision/srt
 
 # How to Use in Gstreamer
 **Commands:** https://www.collabora.com/news-and-blog/blog/2018/02/16/srt-in-gstreamer/
+
 Sender: `gst-launch-1.0 videotestsrc ! video/x-raw, height=1080, width=1920 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264, profile=high ! mpegtsmux ! srtsink uri=srt://:8888/`
 
 Receiver: `gst-launch-1.0 srtsrc uri=srt://10.78.49.32:8888 ! decodebin ! autovideosink`
@@ -40,6 +42,3 @@ Here is the syntax for the srt-live-transmit function:
 Notice that it is listening to the UDP port 1234, and transmitting on the SRT port 4201. The -v represents that it is in verbose mode, so it will display extra debug info.
 
 You can use VLC or Gstreamer to pull up the srt stream, just as if you were using Gstreamer.
-
-# Conclusion
-SRT is still experimental, especially for the Raspberry Pi. But I have tried using it from Mac to Linux using the videotestsrc, and it appears to be working correctly. 
