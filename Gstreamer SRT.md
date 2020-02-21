@@ -10,6 +10,8 @@ Currently our camera stream uses RTSP (Real Time Streaming Protocol), which is f
 # How to Install
 Must have the latest version of Gstreamer installed (1.16+). Most Linux distros atm only include v1.14, which does not include srt. To get the latest version of Gstreamer, you either need to upgrade to a newer Linux distribution (recommended) or build from source.
 
+![GStreamer Version](https://i.imgur.com/Wqv1SxY.png)
+
 Also need to install the srt SDK: https://github.com/Haivision/srt
 
 # How to Use in Gstreamer
@@ -65,11 +67,13 @@ Sender: `gst-launch-1.0 videotestsrc ! video/x-raw, height=480, width=640 ! vide
 
 Receiver: `gst-launch-1.0 srtsrc uri=srt://10.78.49.32:8888 ! decodebin ! autovideosink`
 
+![GIF of VideoTestSrc and SRT](https://i.imgur.com/ef0PDpn.gif)
+
 **My Observations:** The stream works fine, although I did notice at times that there was some latency introduced. I assume this is due to the network performance & the fact I was using a virtual machine, not indicative of what real performance would look like.
 
 Next, I used ffmpeg to stream an mp4 video to a UDP stream, then srt-live-transmit to convert UDP to SRT, and Gstreamer to read the SRT stream all on the same computer (expect similar performance over network). Here are the commands I used:
 
-**For FFMpeg:** `ffmpeg -re -i "Final.mp4" -pix_fmt yuv420p -vsync 1 -threads 0 -vcodec libx264 -r 30 -g 60 -sc_threshold 0 -b:v 640k -bufsize 768k -maxrate 800k -preset veryfast -profile:v baseline -tune film -acodec aac -b:a 128k -ac 2 -ar 48000 -af "aresample=async=1:min_hard_comp=0.100000:first_pts=0" -bsf:v h264_mp4toannexb -f mpegts udp://127.0.0.1:10000?pkt_size=1316`
+**For FFMpeg:** `ffmpeg -re -i "Final.mp4" -pix_fmt yuv420p -vsync 1 -threads 0 -vcodec libx264 -r 30 -g 60 -sc_threshold 0 -b:v 640k -bufsize 768k -maxrate 800k -preset veryfast -profile:v baseline -tune film -acodec aac -b:a 128k -ac 2 -ar 48000 -af "aresample=async=1:min_hard_comp=0.100000:first_pts=0" -bsf:v h264_mp4toannexb -f mpegts udp://127.0.0.1:1234?pkt_size=1316`
 
 "Final.mp4" is the video file we are playing from, assuming it is in the same folder from which the command is launched.
 
@@ -82,6 +86,8 @@ This command takes the FFMpeg UDP stream and turns it into a SRT stream which ca
 **For gstreamer** `gst-launch-1.0 srtsrc uri=srt://127.0.0.1:4201 ! decodebin ! autovideosink`
 
 This command takes the local SRT stream on port 4201 so you can view it in a window.
+
+![GIF of mp4 and SRT](https://i.imgur.com/2MeLVuN.gif)
 
 **My Observations** The stream works great, the video appears to have no lag in it. Since I didn't have a camera to test during this time, the video should be a good representation of what a webcam stream would be like. The next thing to test would be using an actual webcam over an actual network. 
 
