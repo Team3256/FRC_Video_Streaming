@@ -69,7 +69,7 @@ Receiver: `gst-launch-1.0 srtsrc uri=srt://10.78.49.32:8888 ! decodebin ! autovi
 
 Next, I used ffmpeg to stream an mp4 video to a UDP stream, then srt-live-transmit to convert UDP to SRT, and Gstreamer to read the SRT stream all on the same computer (expect similar performance over network). Here are the commands I used:
 
-**For FFMpeg:** `ffmpeg -re -i “Final.mp4” -pix_fmt yuv420p -vsync 1 -threads 0 -vcodec libx264 -r 30 -g 60 -sc_threshold 0 -b:v 640k -bufsize 768k -maxrate 800k -preset veryfast -profile:v baseline -tune film -acodec aac -b:a 128k -ac 2 -ar 48000 -af "aresample=async=1:min_hard_comp=0.100000:first_pts=0" -bsf:v h264_mp4toannexb -f mpegts udp://127.0.0.1:1234?pkt_size=1316`
+**For FFMpeg:** `ffmpeg -re -i "Final.mp4" -pix_fmt yuv420p -vsync 1 -threads 0 -vcodec libx264 -r 30 -g 60 -sc_threshold 0 -b:v 640k -bufsize 768k -maxrate 800k -preset veryfast -profile:v baseline -tune film -acodec aac -b:a 128k -ac 2 -ar 48000 -af "aresample=async=1:min_hard_comp=0.100000:first_pts=0" -bsf:v h264_mp4toannexb -f mpegts udp://127.0.0.1:10000?pkt_size=1316`
 
 "Final.mp4" is the video file we are playing from, assuming it is in the same folder from which the command is launched.
 
