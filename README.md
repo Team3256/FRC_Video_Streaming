@@ -75,9 +75,3 @@ Note: If there is a error message said that "No package 'Glib-2.0' found" after 
     sudo apt-get install libglib2.0-dev
 
 Then, re-type the ./configure again
-
-### OpenCV
-
-Reason of using OpenCV: Write a program to start and manage different video streams at the same time
-
-First of all, we need to download Visual Studio on Windows laptop. Link: [Visual Studio Download](https://visualstudio.microsoft.com/zh-hans/vs/)
