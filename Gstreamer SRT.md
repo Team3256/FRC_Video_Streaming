@@ -12,7 +12,7 @@ Must have the latest version of Gstreamer installed (1.16+). Most Linux distros 
 
 ![GStreamer Version](https://i.imgur.com/Wqv1SxY.png)
 
-Also need to install the srt SDK: https://github.com/Haivision/srt
+Also need to install the srt SDK: https://github.com/Haivision/srt. Follow the instructions to build in the documentation. Make sure to see this issue (https://github.com/Haivision/srt/issues/573) as building the SRT SDK on Raspbian has slightly different steps.
 
 # How to Use in Gstreamer
 **Commands:** https://www.collabora.com/news-and-blog/blog/2018/02/16/srt-in-gstreamer/
