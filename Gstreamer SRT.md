@@ -1,6 +1,6 @@
 # Background
 
-Currently our camera stream uses RTSP (Real Time Streaming Protocol), which is fast, well-documented, and low latency, however, there are still issues, especially when multiple camera streams run at the same time. 
+Currently our camera stream uses RTSP (Real Time Streaming Protocol), which is fast, well-documented, and has low latency; however, there are still issues, especially when multiple camera streams run at the same time. 
 
 # SRT (Secure Reliable Transport)
 **Benefits:** Compared to RTSP, more reliable, more secure, and less latency, especially with congested networks (ie multiple cameras using the same network)
@@ -8,18 +8,18 @@ Currently our camera stream uses RTSP (Real Time Streaming Protocol), which is f
 **Drawbacks:** Still experimental, for ex. the newest version of Raspbian does not natively contain the latest version of Gstreamer which supports SRT, and not as well documented
 
 # How to Install
-Must have the latest version of Gstreamer installed (1.16+). Most Linux distros atm only include v1.14, which does not include srt. To get the latest version of Gstreamer, you either need to upgrade to a newer Linux distribution (recommended) or build from source.
+Must have the latest version of Gstreamer installed (1.16+). Raspbian currently only includes v1.14, which does NOT include srt. To get the latest version of Gstreamer, you either need to upgrade to a newer Linux distribution (recommended, I used the ARM64 edition of Ubuntu 20.10) or build from source.
 
 ![GStreamer Version](https://i.imgur.com/Wqv1SxY.png)
 
-Also need to install the srt SDK: https://github.com/Haivision/srt. Follow the instructions to build in the documentation. Make sure to see this issue (https://github.com/Haivision/srt/issues/573) as building the SRT SDK on Raspbian has slightly different steps.
+Also need to install the srt SDK: https://github.com/Haivision/srt. Follow the instructions to build in the documentation. Make sure to see this issue (https://github.com/Haivision/srt/issues/573) if you are using Raspbian.
 
 # How to Use in Gstreamer
 **Commands:** https://www.collabora.com/news-and-blog/blog/2018/02/16/srt-in-gstreamer/
 
 What will most likely happen the first time you try to run these commands is that it will not find srtsink or srtsrc. When installing Gstreamer, many plugins are not included by default. SRT is part of the gst-plugins-bad package, and, depending on your OS, most likely needs to be manually installed in addition to the Gstreamer base package.
 
-For example, on Debian Linux based systems, you need to run the following command to get all of the packages:
+For example, on Debian Linux based systems, you need to run the following command to get all of the packages: 
 
 `sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio`
 
