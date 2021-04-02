@@ -27,11 +27,13 @@ On macOS, it is recommended that you use Homebrew, a third-party package manager
 
 **How to Install Homebrew:** `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-**How to Install Gstreamer on Homebrew:** `brew install gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav`
+**How to Install Gstreamer on Homebrew:** `brew install srt gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav`
+
+See this article if you are on macOS, since you need to modify the build file for gst-plugins-bad to rely on the srt dependency: https://github.com/Homebrew/homebrew-core/issues/25649
 
 And for Windows, downloading the binaries straight from the GStreamer website should include all of the plugins (but make sure you get the newest version): https://gstreamer.freedesktop.org/data/pkg/windows/ 
 
-Sender: `gst-launch-1.0 videotestsrc ! video/x-raw, height=1080, width=1920 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264, profile=high ! mpegtsmux ! srtsink uri=srt://:8888/` (This is what is run on the Raspberry Pi)
+Sender: `gst-launch-1.0 videotestsrc ! video/x-raw, height=480, width=640 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264, profile=high ! mpegtsmux ! srtsink uri=srt://:8888/` (This is what is run on the Raspberry Pi)
 
 * Replace videotestsrc with the video source that you want to receive from. For most USB webcams on Linux, you will be using v4l2src.
 * Adjust the height and width to match the video specifications that you want. This command uses 1080p, which is high resolution, but takes more of a toll on the network / decoding performance.
