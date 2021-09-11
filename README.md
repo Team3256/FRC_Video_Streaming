@@ -57,6 +57,8 @@ Next, enable SSH so you can access the pi from another system using a program li
 
 NOTE: If you have an ethernet cable plugged into the Pi (like for your FRC router), it will automatically default to it, EVEN if you have specified a working WiFi network. Make sure to disconnect it if you want to connect to the internet. The Pi can NOT connect to the main VCS network due to it not supporting the username/password login method, and will struggle to connect to VCS Guest because it has a captive page. The best method for installing the packages you need is to have another computer as a hotspot connected to the VCS network that can output a new WiFi network. You can also edit the wpa_supplicant file if you have multiple WiFi networks that you need to adjust the priority of (use nano to accomplish this: https://raspberrypi.stackexchange.com/questions/58304/how-to-set-wifi-network-priority)
 
+Run the ifconfig command to check the IP address of your Pi, and you can use PuTTY to connect to it via SSH.
+
 We need to make sure the version of Raspbian is completely up to date. Run:
 
      sudo apt update
@@ -76,7 +78,7 @@ To check the GStreamer version.
 GStreamer is now installed! You can now start doing streams, but only over TCP, which isn't an efficient live streaming transportation method. RTSP is an efficient video streaming protocol that we are currently using to transport the video over the network.
 
 
-##### RTSP Sever
+##### Installing RTSP
 
 What is RTSP? [RTSP, Wikipedia](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol)
 
@@ -86,3 +88,31 @@ Download and configure the RTSP Server
 3. In terminal, go to the folder you have extracted (use "cd" command)
 4. Type ./configure
 5. Once you are finished, type make
+
+##### Testing
+A lot of this is based upon the guide from the first link above, so you can read that while you are reading through this.
+
+First, you can do a basic test on your Windows system to verify that Gstreamer is working. Type
+    gst-launch-1.0 videotestsrc ! videoconvert ! autovideosink
+If you see some test tones, it works!
+
+Next, you should test streaming the videotestsrc over the network. On your pi, type:
+
+    gst-launch-1.0 videotestsrc ! video/x-raw, height=480,width=640 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264,profile=high ! mpegtsmux ! tcpserversink host=((INSERT YOUR IP ADDRESS HERE)) port=5000
+    
+On your viewer PC type:
+
+    gst-launch-1.0 tcpclientsrc uri=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
+
+If you see the test tones on your PC, that means that the videotestsrc is successfully being streamed from the Raspberry Pi to your Windows PC!
+
+Now, the ultimate test: outputting your camera feed over the network. Insert your camera into the USB port, and then run the below command on your Pi:
+
+    gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,width=640,height=480,framerate=30/1 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264,profile=high ! mpegtsmux ! tcpserversink host=((INSERT YOUR IP ADDRESS HERE)) port=5000
+    
+And on your PC, run:
+
+    gst-launch-1.0 tcpclientsrc uri=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
+    
+If you see what your camera sees, it works! It is expected that there will be some delay since we are streaming over TCP, but if you can see your stream it is considered successful.
+
