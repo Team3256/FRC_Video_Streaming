@@ -89,7 +89,7 @@ Download and configure the RTSP Server
 4. Type ./configure
 5. Once you are finished, type make
 
-##### Testing
+## Testing
 A lot of this is based upon the guide from the first link above, so you can read that while you are reading through this.
 
 First, you can do a basic test on your Windows system to verify that Gstreamer is working. Type
