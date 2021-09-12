@@ -112,7 +112,7 @@ Now, the ultimate test: outputting your camera feed over the network. Insert you
     
 And on your PC, run:
 
-    gst-launch-1.0 tcpclientsrc uri=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
+    gst-launch-1.0 tcpclientsrc host=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
     
 If you see what your camera sees, it works! It is expected that there will be some delay since we are streaming over TCP, but if you can see your stream it is considered successful.
 
