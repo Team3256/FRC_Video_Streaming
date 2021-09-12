@@ -40,7 +40,7 @@ Before starting setup, we need to write Raspbian system into raspberry pi MicroS
 
 [Gstreamer Installation (Windows)](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c)
 
-The best way I have found so far is to use Chocolatey, which works similar to a package manager on Linux. Use this guide (https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey) to install Chocolatey using cmd.exe, and then type:
+The best way I have found so far is to use Chocolatey, which works similar to a package manager on Linux. Use this guide (https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey) *Select basic Chocolatey install* to install Chocolatey using cmd.exe, and then type:
 
     choco install gstreamer
     
