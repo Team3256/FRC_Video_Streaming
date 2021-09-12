@@ -102,7 +102,7 @@ Next, you should test streaming the videotestsrc over the network. On your pi, t
     
 On your viewer PC type:
 
-    gst-launch-1.0 tcpclientsrc host=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
+    gst-launch-1.0 tcpclientsrc host=((SAME IP AS YOUR RASBERRY PI)) port=5000 ! decodebin ! autovideosink
 
 If you see the test tones on your PC, that means that the videotestsrc is successfully being streamed from the Raspberry Pi to your Windows PC!
 
