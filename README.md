@@ -40,6 +40,8 @@ Before starting setup, we need to write Raspbian system into raspberry pi MicroS
 
 [Gstreamer Installation (Windows)](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c)
 
+Make sure that the 2015, 2017, and 2019 Visual C++ runtimes are installed PRIOR to installation!  https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0\
+
 The best way I have found so far is to use Chocolatey, which works similar to a package manager on Linux. Use this guide (https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey) *Select basic Chocolatey install* to install Chocolatey using cmd.exe, and then type:
 
     choco install gstreamer
