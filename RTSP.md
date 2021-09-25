@@ -28,3 +28,17 @@ An important point before you start adding more cameras is to check the temperat
 
 In order to be able to execute this command while test-launch is running, add  & to the end of the test-launch command. To quit it, type ps, see what the process ID is, and then run kill (PROCESS ID). 
 
+### Modifiying the test-launch.c file
+To use more than one camera, we need to modify the test-launch.c file. Download the test-launch.c file from this GitHub repo and replace the default test-launch.c file with the new file. Then recompile using the same steps from above. To run it, type
+
+    ./test-launch -p 5800
+
+What this modified test-launch.c file does is create two separate streams, both on port 5800. You can use the same command from the Adding RTSP section above, but you can replace the test with either front or top. For more info about how this modified file works, look at the Guide to H.264 Streaming on the main readme.md under the 'Some fries on the side' section. 
+
+You can access the streams on your viewer computer by opening up two cmd windows and typing in:
+
+    gst-launch-1.0 rtspsrc location=rtsp://(YOUR PI's IP ADDRESS):5800/front latency=0 ! rtph264depay ! decodebin ! autovideosink
+    
+and
+
+    gst-launch-1.0 rtspsrc location=rtsp://(YOUR PI's IP ADDRESS):5800/top latency=0 ! rtph264depay ! decodebin ! autovideosink
