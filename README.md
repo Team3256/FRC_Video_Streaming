@@ -28,7 +28,8 @@ For OpenCV, it is a library of programming functions mainly aimed at real-time c
 * 1 Micro-SD card to install Raspbian or Ubuntu Server [Recommendation: Samsung 64GB Version](https://www.amazon.com/dp/B06XX29S9Q?aaxitk=cbwfyKhuwZuc09zBCGigew&pd_rd_i=B06XX29S9Q&pf_rd_p=591760d1-6468-480f-9b10-0ee9c85706fd&hsa_cr_id=4976542660401&sb-ci-n=asinImage&sb-ci-v=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81rpcHc0XzL.jpg&sb-ci-a=B06XX29S9Q)
 
 ## Guides:
-- Installing and Setting Up GStreamer [InstallSetup.md](https://github.com/Team3256/FRC_Video_Streaming_2020/blob/master/InstallSetup.md)
+1. Installing and Setting Up GStreamer -- [InstallSetup.md](https://github.com/Team3256/FRC_Video_Streaming_2020/blob/master/InstallSetup.md)
+2. Setting up Real Time Streaming Protocol (RTSP) -- [RTSP.md](https://github.com/Team3256/FRC_Video_Streaming_2020/blob/master/RTSP.md)
 
 ##### Installing RTSP
 
