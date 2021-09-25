@@ -71,12 +71,12 @@ main (int argc, char *argv[])
   // Please note that the video2 and video0 designations depend on how the system sees the two cameras. These numbers may need to be changed or swapped if the cameras are unplugged or if they change USB ports.
   // Curerntly these cameras are both plugged into the USB 2.0 ports on the Pi.
   factory = gst_rtsp_media_factory_new ();
-  gst_rtsp_media_factory_set_launch (factory, "( v4l2src device=/dev/video2 ! video/x-raw,width=640,height=360,framerate=30/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1000 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
+  gst_rtsp_media_factory_set_launch (factory, "( v4l2src device=/dev/video2 ! video/x-raw,width=640,height=360,framerate=30/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1500 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
   gst_rtsp_media_factory_set_shared (factory, TRUE);
   gst_rtsp_mount_points_add_factory (mounts, "/front", factory);
   
   factory = gst_rtsp_media_factory_new ();
-  gst_rtsp_media_factory_set_launch (factory, "( v4l2src device=/dev/video0 ! video/x-raw,width=640,height=360,framerate=30/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1000 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
+  gst_rtsp_media_factory_set_launch (factory, "( v4l2src device=/dev/video0 ! video/x-raw,width=640,height=360,framerate=30/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1500 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
   gst_rtsp_media_factory_set_shared (factory, TRUE);
   gst_rtsp_mount_points_add_factory (mounts, "/top", factory);
 
