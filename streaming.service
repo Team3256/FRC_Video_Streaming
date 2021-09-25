@@ -1,0 +1,15 @@
+# location: /etc/systemd/system/streaming.service
+
+[Unit]
+Description=Team 3256 Camera Streaming
+
+[Service]
+ExecStart=/home/pi/startstreaming.sh
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=simple
+WorkingDirectory=/home/pi/
+
+[Install]
+WantedBy=multi-user.target
