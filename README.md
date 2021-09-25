@@ -30,3 +30,4 @@ For OpenCV, it is a library of programming functions mainly aimed at real-time c
 ## Guides:
 1. Installing and Setting Up GStreamer -- [InstallSetup.md](https://github.com/Team3256/FRC_Video_Streaming_2020/blob/master/InstallSetup.md)
 2. Setting up Real Time Streaming Protocol (RTSP) -- [RTSP.md](https://github.com/Team3256/FRC_Video_Streaming_2020/blob/master/RTSP.md)
+3. Automating Everything (systemd) -- Systemd.md
