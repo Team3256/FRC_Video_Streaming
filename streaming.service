@@ -7,6 +7,7 @@ Description=Team 3256 Camera Streaming
 ExecStart=/home/pi/startstreaming.sh
 KillMode=process
 Restart=on-failure
+RestartSec=5
 RestartPreventExitStatus=255
 Type=simple
 WorkingDirectory=/home/pi/
