@@ -1,6 +1,6 @@
 
 ### Automating GStreamer
-We will be following this guide from 'A Guide to H.264 Streaming' under the section titled 'Sysetmd and services'.
+We will be following this guide from 'A Guide to H.264 Streaming' under the section titled 'Systend and services'.
 
 Download the streaming.service file in the repo and place it in the /etc/systemd/system folder.
 Then download the startstreaming.sh file and place it in your home directory. Make it executable by executing 'chmod u+x startstreaming.sh'.
