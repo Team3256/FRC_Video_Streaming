@@ -8,4 +8,4 @@ rmmod uvcvideo
 modprobe uvcvideo quirks=128
 
 # Run the test-launch script with gstreamer debugging turned on
-GST_DEBUGS=2 /home/pi/gst-rtsp-server-1.14.4/examples/test-launch -p 5800
+GST_DEBUG=2 /home/pi/gst-rtsp-server-1.14.4/examples/test-launch -p 5800
