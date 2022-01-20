@@ -1,0 +1,16 @@
+# location: /etc/systemd/system/interactive.service
+
+[Unit]
+Description=Team 3256 Interactive GStreamer Service
+
+[Service]
+ExecStart=/home/pi/interactive/startinteractive.sh #add bash script which links to python script
+KillMode=process
+Restart=on-failure
+RestartSec=5
+RestartPreventExitStatus=255
+Type=simple
+WorkingDirectory=/home/pi/interactive #make sure this is the directory where the .sh file is located
+
+[Install]
+WantedBy=multi-user.target

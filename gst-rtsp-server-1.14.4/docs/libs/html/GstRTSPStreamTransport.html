@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GstRTSPStreamTransport: GStreamer RTSP Server Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GStreamer RTSP Server Reference Manual">
+<link rel="up" href="ch01.html" title="">
+<link rel="prev" href="GstRTSPSessionMedia.html" title="GstRTSPSessionMedia">
+<link rel="next" href="gst-rtsp-server-GstRTSPSdp.html" title="GstRTSPSdp">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GstRTSPStreamTransport.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GstRTSPStreamTransport.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GstRTSPSessionMedia.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gst-rtsp-server-GstRTSPSdp.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GstRTSPStreamTransport"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GstRTSPStreamTransport.top_of_page"></a>GstRTSPStreamTransport</span></h2>
+<p>GstRTSPStreamTransport — A media stream transport configuration</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="returnvalue">GstRTSPStreamTransport</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-new" title="gst_rtsp_stream_transport_new ()">gst_rtsp_stream_transport_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="returnvalue">GstRTSPStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-get-stream" title="gst_rtsp_stream_transport_get_stream ()">gst_rtsp_stream_transport_get_stream</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPRange.html#GstRTSPTransport"><span class="returnvalue">GstRTSPTransport</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-get-transport" title="gst_rtsp_stream_transport_get_transport ()">gst_rtsp_stream_transport_get_transport</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-transport" title="gst_rtsp_stream_transport_set_transport ()">gst_rtsp_stream_transport_set_transport</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPUrl.html#GstRTSPUrl"><span class="returnvalue">GstRTSPUrl</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-get-url" title="gst_rtsp_stream_transport_get_url ()">gst_rtsp_stream_transport_get_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-url" title="gst_rtsp_stream_transport_set_url ()">gst_rtsp_stream_transport_set_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-get-rtpinfo" title="gst_rtsp_stream_transport_get_rtpinfo ()">gst_rtsp_stream_transport_get_rtpinfo</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GstRTSPStreamTransport.html#GstRTSPSendFunc" title="GstRTSPSendFunc ()">*GstRTSPSendFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-callbacks" title="gst_rtsp_stream_transport_set_callbacks ()">gst_rtsp_stream_transport_set_callbacks</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GstRTSPStreamTransport.html#GstRTSPKeepAliveFunc" title="GstRTSPKeepAliveFunc ()">*GstRTSPKeepAliveFunc</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-keepalive" title="gst_rtsp_stream_transport_set_keepalive ()">gst_rtsp_stream_transport_set_keepalive</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-keep-alive" title="gst_rtsp_stream_transport_keep_alive ()">gst_rtsp_stream_transport_keep_alive</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-active" title="gst_rtsp_stream_transport_set_active ()">gst_rtsp_stream_transport_set_active</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-timed-out" title="gst_rtsp_stream_transport_set_timed_out ()">gst_rtsp_stream_transport_set_timed_out</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-is-timed-out" title="gst_rtsp_stream_transport_is_timed_out ()">gst_rtsp_stream_transport_is_timed_out</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-send-rtcp" title="gst_rtsp_stream_transport_send_rtcp ()">gst_rtsp_stream_transport_send_rtcp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-send-rtp" title="gst_rtsp_stream_transport_send_rtp ()">gst_rtsp_stream_transport_send_rtp</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPStreamTransport.html#GstRTSPStreamTransport-struct" title="struct GstRTSPStreamTransport">GstRTSPStreamTransport</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPStreamTransport.html#GstRTSPStreamTransportClass" title="struct GstRTSPStreamTransportClass">GstRTSPStreamTransportClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GstRTSPStreamTransport
+</pre>
+</div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> configures the transport used by a
+<a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="type">GstRTSPStream</span></a>. It is usually manages by a <a class="link" href="GstRTSPSessionMedia.html" title="GstRTSPSessionMedia"><span class="type">GstRTSPSessionMedia</span></a> object.</p>
+<p>With <a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-callbacks" title="gst_rtsp_stream_transport_set_callbacks ()"><code class="function">gst_rtsp_stream_transport_set_callbacks()</code></a>, callbacks can be configured
+to handle the RTP and RTCP packets from the stream, for example when they
+need to be sent over TCP.</p>
+<p>With  <a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-active" title="gst_rtsp_stream_transport_set_active ()"><code class="function">gst_rtsp_stream_transport_set_active()</code></a> the transports are added and
+removed from the stream.</p>
+<p>A <a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="type">GstRTSPStream</span></a> will call <a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-keep-alive" title="gst_rtsp_stream_transport_keep_alive ()"><code class="function">gst_rtsp_stream_transport_keep_alive()</code></a> when RTCP
+is received from the client. It will also call
+<a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-timed-out" title="gst_rtsp_stream_transport_set_timed_out ()"><code class="function">gst_rtsp_stream_transport_set_timed_out()</code></a> when a receiver has timed out.</p>
+<p>Last reviewed on 2013-07-16 (1.0.0)</p>
+</div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-new"></a><h3>gst_rtsp_stream_transport_new ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="returnvalue">GstRTSPStreamTransport</span></a> *
+gst_rtsp_stream_transport_new (<em class="parameter"><code><a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="type">GstRTSPStream</span></a> *stream</code></em>,
+                               <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPRange.html#GstRTSPTransport"><span class="type">GstRTSPTransport</span></a> *tr</code></em>);</pre>
+<p>Create a new <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> that can be used to manage
+<em class="parameter"><code>stream</code></em>
+ with transport <em class="parameter"><code>tr</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="type">GstRTSPStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>tr</p></td>
+<td class="parameter_description"><p>a GstRTSPTransport. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-get-stream"></a><h3>gst_rtsp_stream_transport_get_stream ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="returnvalue">GstRTSPStream</span></a> *
+gst_rtsp_stream_transport_get_stream (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>);</pre>
+<p>Get the <a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="type">GstRTSPStream</span></a> used when constructing <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-stream.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-stream.returns"></a><h4>Returns</h4>
+<p>the stream used when constructing <em class="parameter"><code>trans</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-get-transport"></a><h3>gst_rtsp_stream_transport_get_transport ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPRange.html#GstRTSPTransport"><span class="returnvalue">GstRTSPTransport</span></a> *
+gst_rtsp_stream_transport_get_transport
+                               (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>);</pre>
+<p>Get the transport configured in <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-transport.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-transport.returns"></a><h4>Returns</h4>
+<p>the transport configured in <em class="parameter"><code>trans</code></em>
+. It remains
+valid for as long as <em class="parameter"><code>trans</code></em>
+is valid. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-set-transport"></a><h3>gst_rtsp_stream_transport_set_transport ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_stream_transport_set_transport
+                               (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPRange.html#GstRTSPTransport"><span class="type">GstRTSPTransport</span></a> *tr</code></em>);</pre>
+<p>Set <em class="parameter"><code>tr</code></em>
+ as the client transport. This function takes ownership of the
+passed <em class="parameter"><code>tr</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-transport.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>tr</p></td>
+<td class="parameter_description"><p>a client <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPRange.html#GstRTSPTransport"><span class="type">GstRTSPTransport</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-get-url"></a><h3>gst_rtsp_stream_transport_get_url ()</h3>
+<pre class="programlisting">const <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPUrl.html#GstRTSPUrl"><span class="returnvalue">GstRTSPUrl</span></a> *
+gst_rtsp_stream_transport_get_url (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>);</pre>
+<p>Get the url configured in <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-url.returns"></a><h4>Returns</h4>
+<p>the url configured in <em class="parameter"><code>trans</code></em>
+.
+It remains valid for as long as <em class="parameter"><code>trans</code></em>
+is valid. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-set-url"></a><h3>gst_rtsp_stream_transport_set_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_stream_transport_set_url (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                   <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPUrl.html#GstRTSPUrl"><span class="type">GstRTSPUrl</span></a> *url</code></em>);</pre>
+<p>Set <em class="parameter"><code>url</code></em>
+ as the client url.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>url</p></td>
+<td class="parameter_description"><p>a client <a href="/usr/share/gtk-doc/html/gst-plugins-base-libs-1.0/gst-plugins-base-libs-GstRTSPUrl.html#GstRTSPUrl"><span class="type">GstRTSPUrl</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-get-rtpinfo"></a><h3>gst_rtsp_stream_transport_get_rtpinfo ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gst_rtsp_stream_transport_get_rtpinfo (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                       <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstClock.html#GstClockTime"><span class="type">GstClockTime</span></a> start_time</code></em>);</pre>
+<p>Get the RTP-Info string for <em class="parameter"><code>trans</code></em>
+ and <em class="parameter"><code>start_time</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-rtpinfo.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>start_time</p></td>
+<td class="parameter_description"><p>a star time</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-get-rtpinfo.returns"></a><h4>Returns</h4>
+<p>the RTPInfo string for <em class="parameter"><code>trans</code></em>
+and <em class="parameter"><code>start_time</code></em>
+or <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> when the RTP-Info could not be
+determined. <a href="/usr/share/gtk-doc/html/glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPSendFunc"></a><h3>GstRTSPSendFunc ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="c_punctuation">(</span>*GstRTSPSendFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstBuffer.html#GstBuffer-struct"><span class="type">GstBuffer</span></a> *buffer</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> channel</code></em>,
+                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Function registered with <a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-callbacks" title="gst_rtsp_stream_transport_set_callbacks ()"><code class="function">gst_rtsp_stream_transport_set_callbacks()</code></a> and
+called when <em class="parameter"><code>buffer</code></em>
+ must be sent on <em class="parameter"><code>channel</code></em>
+.</p>
+<div class="refsect3">
+<a name="GstRTSPSendFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstBuffer.html#GstBuffer-struct"><span class="type">GstBuffer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>channel</p></td>
+<td class="parameter_description"><p>a channel</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GstRTSPSendFunc.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-set-callbacks"></a><h3>gst_rtsp_stream_transport_set_callbacks ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_stream_transport_set_callbacks
+                               (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                <em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html#GstRTSPSendFunc" title="GstRTSPSendFunc ()"><span class="type">GstRTSPSendFunc</span></a> send_rtp</code></em>,
+                                <em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html#GstRTSPSendFunc" title="GstRTSPSendFunc ()"><span class="type">GstRTSPSendFunc</span></a> send_rtcp</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> notify</code></em>);</pre>
+<p>Install callbacks that will be called when data for a stream should be sent
+to a client. This is usually used when sending RTP/RTCP over TCP.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-callbacks.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>send_rtp</p></td>
+<td class="parameter_description"><p>a callback called when RTP should be sent. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until the GDestroyNotify argument is called."><span class="acronym">scope notified</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>send_rtcp</p></td>
+<td class="parameter_description"><p>a callback called when RTCP should be sent. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until the GDestroyNotify argument is called."><span class="acronym">scope notified</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data passed to callbacks. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>notify</p></td>
+<td class="parameter_description"><p>called with the user_data when no longer needed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPKeepAliveFunc"></a><h3>GstRTSPKeepAliveFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GstRTSPKeepAliveFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Function registered with <a class="link" href="GstRTSPStreamTransport.html#gst-rtsp-stream-transport-set-keepalive" title="gst_rtsp_stream_transport_set_keepalive ()"><code class="function">gst_rtsp_stream_transport_set_keepalive()</code></a> and called
+when the stream is active.</p>
+<div class="refsect3">
+<a name="GstRTSPKeepAliveFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-set-keepalive"></a><h3>gst_rtsp_stream_transport_set_keepalive ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_stream_transport_set_keepalive
+                               (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                <em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html#GstRTSPKeepAliveFunc" title="GstRTSPKeepAliveFunc ()"><span class="type">GstRTSPKeepAliveFunc</span></a> keep_alive</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> notify</code></em>);</pre>
+<p>Install callbacks that will be called when RTCP packets are received from the
+receiver of <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-keepalive.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>keep_alive</p></td>
+<td class="parameter_description"><p>a callback called when the receiver is active. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until the GDestroyNotify argument is called."><span class="acronym">scope notified</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data passed to callback. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>notify</p></td>
+<td class="parameter_description"><p>called with the user_data when no longer needed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-keep-alive"></a><h3>gst_rtsp_stream_transport_keep_alive ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_stream_transport_keep_alive (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>);</pre>
+<p>Signal the installed keep_alive callback for <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-keep-alive.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-set-active"></a><h3>gst_rtsp_stream_transport_set_active ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gst_rtsp_stream_transport_set_active (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> active</code></em>);</pre>
+<p>Activate or deactivate datatransfer configured in <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-active.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>active</p></td>
+<td class="parameter_description"><p>new state of <em class="parameter"><code>trans</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-active.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> when the state was changed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-set-timed-out"></a><h3>gst_rtsp_stream_transport_set_timed_out ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_stream_transport_set_timed_out
+                               (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> timedout</code></em>);</pre>
+<p>Set the timed out state of <em class="parameter"><code>trans</code></em>
+ to <em class="parameter"><code>timedout</code></em>
+</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-set-timed-out.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timedout</p></td>
+<td class="parameter_description"><p>timed out value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-is-timed-out"></a><h3>gst_rtsp_stream_transport_is_timed_out ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gst_rtsp_stream_transport_is_timed_out
+                               (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>);</pre>
+<p>Check if <em class="parameter"><code>trans</code></em>
+ is timed out.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-is-timed-out.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-is-timed-out.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>trans</code></em>
+timed out.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-send-rtcp"></a><h3>gst_rtsp_stream_transport_send_rtcp ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gst_rtsp_stream_transport_send_rtcp (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                     <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstBuffer.html#GstBuffer-struct"><span class="type">GstBuffer</span></a> *buffer</code></em>);</pre>
+<p>Send <em class="parameter"><code>buffer</code></em>
+ to the installed RTCP callback for <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-send-rtcp.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstBuffer.html#GstBuffer-struct"><span class="type">GstBuffer</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-send-rtcp.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-stream-transport-send-rtp"></a><h3>gst_rtsp_stream_transport_send_rtp ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gst_rtsp_stream_transport_send_rtp (<em class="parameter"><code><a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a> *trans</code></em>,
+                                    <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstBuffer.html#GstBuffer-struct"><span class="type">GstBuffer</span></a> *buffer</code></em>);</pre>
+<p>Send <em class="parameter"><code>buffer</code></em>
+ to the installed RTP callback for <em class="parameter"><code>trans</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-send-rtp.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>trans</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPStreamTransport.html" title="GstRTSPStreamTransport"><span class="type">GstRTSPStreamTransport</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>buffer</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gstreamer-1.0/GstBuffer.html#GstBuffer-struct"><span class="type">GstBuffer</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-stream-transport-send-rtp.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GstRTSPStreamTransport-struct"></a><h3>struct GstRTSPStreamTransport</h3>
+<pre class="programlisting">struct GstRTSPStreamTransport;</pre>
+<p>A Transport description for a stream</p>
+<div class="refsect3">
+<a name="GstRTSPStreamTransport.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPStreamTransportClass"></a><h3>struct GstRTSPStreamTransportClass</h3>
+<pre class="programlisting">struct GstRTSPStreamTransportClass {
+  GObjectClass parent_class;
+};
+</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPStreamTransport.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GstRTSPStream.html" title="GstRTSPStream"><span class="type">GstRTSPStream</span></a>, <a class="link" href="GstRTSPSessionMedia.html" title="GstRTSPSessionMedia"><span class="type">GstRTSPSessionMedia</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.28</div>
+</body>
+</html>

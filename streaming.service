@@ -10,7 +10,7 @@ Restart=on-failure
 RestartSec=5
 RestartPreventExitStatus=255
 Type=simple
-WorkingDirectory=/home/pi/
+WorkingDirectory=/home/pi/ #make sure this is the directory where the .sh file is located!!!
 
 [Install]
 WantedBy=multi-user.target

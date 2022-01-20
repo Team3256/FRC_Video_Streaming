@@ -1,0 +1,616 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GstRTSPThreadPool: GStreamer RTSP Server Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GStreamer RTSP Server Reference Manual">
+<link rel="up" href="ch01.html" title="">
+<link rel="prev" href="GstRTSPAddressPool.html" title="GstRTSPAddressPool">
+<link rel="next" href="GstRTSPAuth.html" title="GstRTSPAuth">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GstRTSPThreadPool.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GstRTSPThreadPool.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GstRTSPThreadPool.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GstRTSPAddressPool.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GstRTSPAuth.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GstRTSPThreadPool"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GstRTSPThreadPool.top_of_page"></a>GstRTSPThreadPool</span></h2>
+<p>GstRTSPThreadPool — A pool of threads</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="returnvalue">GstRTSPThread</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-new" title="gst_rtsp_thread_new ()">gst_rtsp_thread_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="returnvalue">GstRTSPThread</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-ref" title="gst_rtsp_thread_ref ()">gst_rtsp_thread_ref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-unref" title="gst_rtsp_thread_unref ()">gst_rtsp_thread_unref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-reuse" title="gst_rtsp_thread_reuse ()">gst_rtsp_thread_reuse</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-stop" title="gst_rtsp_thread_stop ()">gst_rtsp_thread_stop</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="returnvalue">GstRTSPThreadPool</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-new" title="gst_rtsp_thread_pool_new ()">gst_rtsp_thread_pool_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-get-max-threads" title="gst_rtsp_thread_pool_get_max_threads ()">gst_rtsp_thread_pool_get_max_threads</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-set-max-threads" title="gst_rtsp_thread_pool_set_max_threads ()">gst_rtsp_thread_pool_set_max_threads</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="returnvalue">GstRTSPThread</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-get-thread" title="gst_rtsp_thread_pool_get_thread ()">gst_rtsp_thread_pool_get_thread</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-cleanup" title="gst_rtsp_thread_pool_cleanup ()">gst_rtsp_thread_pool_cleanup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadPool--max-threads" title="The “max-threads” property">max-threads</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadType" title="enum GstRTSPThreadType">GstRTSPThreadType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread">GstRTSPThread</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadPool-struct" title="struct GstRTSPThreadPool">GstRTSPThreadPool</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadPoolClass" title="struct GstRTSPThreadPoolClass">GstRTSPThreadPoolClass</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GstRTSPThreadPool
+</pre>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.description"></a><h2>Description</h2>
+<p>A <a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a> manages reusable threads for various server tasks.
+Currently the defined thread types can be found in <a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadType" title="enum GstRTSPThreadType"><span class="type">GstRTSPThreadType</span></a>.</p>
+<p>Threads of type <a class="link" href="GstRTSPThreadPool.html#GST-RTSP-THREAD-TYPE-CLIENT:CAPS"><span class="type">GST_RTSP_THREAD_TYPE_CLIENT</span></a> are used to handle requests from
+a connected client. With <a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-get-max-threads" title="gst_rtsp_thread_pool_get_max_threads ()"><code class="function">gst_rtsp_thread_pool_get_max_threads()</code></a> a maximum
+number of threads can be set after which the pool will start to reuse the
+same thread for multiple clients.</p>
+<p>Threads of type <a class="link" href="GstRTSPThreadPool.html#GST-RTSP-THREAD-TYPE-MEDIA:CAPS"><span class="type">GST_RTSP_THREAD_TYPE_MEDIA</span></a> will be used to perform the state
+changes of the media pipelines and handle its bus messages.</p>
+<p>gst_rtsp_thread_pool_get_thread() can be used to create a <a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a>
+object of the right type. The thread object contains a mainloop and context
+that run in a seperate thread and can be used to attached sources to.</p>
+<p>gst_rtsp_thread_reuse() can be used to reuse a thread for multiple purposes.
+If all <a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-reuse" title="gst_rtsp_thread_reuse ()"><code class="function">gst_rtsp_thread_reuse()</code></a> calls are matched with a
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-stop" title="gst_rtsp_thread_stop ()"><code class="function">gst_rtsp_thread_stop()</code></a> call, the mainloop will be quit and the thread will
+stop.</p>
+<p>To configure the threads, a subclass of this object should be made and the
+virtual methods should be overriden to implement the desired functionality.</p>
+<p>Last reviewed on 2013-07-11 (1.0.0)</p>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gst-rtsp-thread-new"></a><h3>gst_rtsp_thread_new ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="returnvalue">GstRTSPThread</span></a> *
+gst_rtsp_thread_new (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadType" title="enum GstRTSPThreadType"><span class="type">GstRTSPThreadType</span></a> type</code></em>);</pre>
+<p>Create a new thread object that can run a mainloop.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the thread type</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-thread-new.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-ref"></a><h3>gst_rtsp_thread_ref ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="returnvalue">GstRTSPThread</span></a> *
+gst_rtsp_thread_ref (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a> *thread</code></em>);</pre>
+<p>Increase the refcount of this thread.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-ref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>thread</p></td>
+<td class="parameter_description"><p>The thread to refcount</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-thread-ref.returns"></a><h4>Returns</h4>
+<p><em class="parameter"><code>thread</code></em>
+(for convenience when doing assignments). </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-unref"></a><h3>gst_rtsp_thread_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_thread_unref (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a> *thread</code></em>);</pre>
+<p>Decrease the refcount of an thread, freeing it if the refcount reaches 0.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-unref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>thread</p></td>
+<td class="parameter_description"><p>the thread to refcount. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-reuse"></a><h3>gst_rtsp_thread_reuse ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gst_rtsp_thread_reuse (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a> *thread</code></em>);</pre>
+<p>Reuse the mainloop of <em class="parameter"><code>thread</code></em>
+</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-reuse.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>thread</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-thread-reuse.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the mainloop could be reused</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-stop"></a><h3>gst_rtsp_thread_stop ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_thread_stop (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a> *thread</code></em>);</pre>
+<p>Stop and unref <em class="parameter"><code>thread</code></em>
+. When no threads are using the mainloop, the thread
+will be stopped and the final ref to <em class="parameter"><code>thread</code></em>
+ will be released.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-stop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>thread</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-pool-new"></a><h3>gst_rtsp_thread_pool_new ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="returnvalue">GstRTSPThreadPool</span></a> *
+gst_rtsp_thread_pool_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Create a new <a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a> instance.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-pool-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-pool-get-max-threads"></a><h3>gst_rtsp_thread_pool_get_max_threads ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>
+gst_rtsp_thread_pool_get_max_threads (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a> *pool</code></em>);</pre>
+<p>Get the maximum number of threads used for client connections.
+See <a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-pool-set-max-threads" title="gst_rtsp_thread_pool_set_max_threads ()"><code class="function">gst_rtsp_thread_pool_set_max_threads()</code></a>.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-pool-get-max-threads.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>pool</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-thread-pool-get-max-threads.returns"></a><h4>Returns</h4>
+<p> the maximum number of threads.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-pool-set-max-threads"></a><h3>gst_rtsp_thread_pool_set_max_threads ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_thread_pool_set_max_threads (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a> *pool</code></em>,
+                                      <em class="parameter"><code><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> max_threads</code></em>);</pre>
+<p>Set the maximum threads used by the pool to handle client requests.
+A value of 0 will use the pool mainloop, a value of -1 will use an
+unlimited number of threads.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-pool-set-max-threads.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pool</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max_threads</p></td>
+<td class="parameter_description"><p>maximum threads</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-pool-get-thread"></a><h3>gst_rtsp_thread_pool_get_thread ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="returnvalue">GstRTSPThread</span></a> *
+gst_rtsp_thread_pool_get_thread (<em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a> *pool</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadType" title="enum GstRTSPThreadType"><span class="type">GstRTSPThreadType</span></a> type</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GstRTSPContext.html" title="GstRTSPContext"><span class="type">GstRTSPContext</span></a> *ctx</code></em>);</pre>
+<p>Get a new <a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a> for <em class="parameter"><code>type</code></em>
+ and <em class="parameter"><code>ctx</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-thread-pool-get-thread.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>pool</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool"><span class="type">GstRTSPThreadPool</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadType" title="enum GstRTSPThreadType"><span class="type">GstRTSPThreadType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ctx</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPContext.html" title="GstRTSPContext"><span class="type">GstRTSPContext</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-thread-pool-get-thread.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GstRTSPThreadPool.html#GstRTSPThread" title="struct GstRTSPThread"><span class="type">GstRTSPThread</span></a>,
+<a class="link" href="GstRTSPThreadPool.html#gst-rtsp-thread-stop" title="gst_rtsp_thread_stop ()"><code class="function">gst_rtsp_thread_stop()</code></a> after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-thread-pool-cleanup"></a><h3>gst_rtsp_thread_pool_cleanup ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_thread_pool_cleanup (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Wait for all tasks to be stopped and free all allocated resources. This is
+mainly used in test suites to ensure proper cleanup of internal data
+structures.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GstRTSPThreadType"></a><h3>enum GstRTSPThreadType</h3>
+<p>Different thread types</p>
+<div class="refsect3">
+<a name="GstRTSPThreadType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GST-RTSP-THREAD-TYPE-CLIENT:CAPS"></a>GST_RTSP_THREAD_TYPE_CLIENT</p></td>
+<td class="enum_member_description">
+<p>a thread to handle the client communication</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GST-RTSP-THREAD-TYPE-MEDIA:CAPS"></a>GST_RTSP_THREAD_TYPE_MEDIA</p></td>
+<td class="enum_member_description">
+<p>a thread to handle media </p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPThread"></a><h3>struct GstRTSPThread</h3>
+<pre class="programlisting">struct GstRTSPThread {
+  GstMiniObject mini_object;
+
+  GstRTSPThreadType type;
+  GMainContext *context;
+  GMainLoop *loop;
+};
+</pre>
+<p>Structure holding info about a mainloop running in a thread</p>
+<div class="refsect3">
+<a name="GstRTSPThread.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/gstreamer-1.0/gstreamer-GstMiniObject.html#GstMiniObject"><span class="type">GstMiniObject</span></a> <em class="structfield"><code><a name="GstRTSPThread.mini-object"></a>mini_object</code></em>;</p></td>
+<td class="struct_member_description"><p>parent <a href="/usr/share/gtk-doc/html/gstreamer-1.0/gstreamer-GstMiniObject.html#GstMiniObject"><span class="type">GstMiniObject</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="GstRTSPThreadPool.html#GstRTSPThreadType" title="enum GstRTSPThreadType"><span class="type">GstRTSPThreadType</span></a> <em class="structfield"><code><a name="GstRTSPThread.type"></a>type</code></em>;</p></td>
+<td class="struct_member_description"><p>the thread type</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *<em class="structfield"><code><a name="GstRTSPThread.context"></a>context</code></em>;</p></td>
+<td class="struct_member_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-The-Main-Event-Loop.html#GMainLoop"><span class="type">GMainLoop</span></a> *<em class="structfield"><code><a name="GstRTSPThread.loop"></a>loop</code></em>;</p></td>
+<td class="struct_member_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-The-Main-Event-Loop.html#GMainLoop"><span class="type">GMainLoop</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPThreadPool-struct"></a><h3>struct GstRTSPThreadPool</h3>
+<pre class="programlisting">struct GstRTSPThreadPool;</pre>
+<p>The thread pool structure.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPThreadPoolClass"></a><h3>struct GstRTSPThreadPoolClass</h3>
+<pre class="programlisting">struct GstRTSPThreadPoolClass {
+  GObjectClass  parent_class;
+
+  GThreadPool *pool;
+
+  GstRTSPThread * (*get_thread)        (GstRTSPThreadPool *pool,
+                                        GstRTSPThreadType type,
+                                        GstRTSPContext *ctx);
+  void            (*configure_thread)  (GstRTSPThreadPool *pool,
+                                        GstRTSPThread * thread,
+                                        GstRTSPContext *ctx);
+
+  void            (*thread_enter)      (GstRTSPThreadPool *pool,
+                                        GstRTSPThread *thread);
+  void            (*thread_leave)      (GstRTSPThreadPool *pool,
+                                        GstRTSPThread *thread);
+};
+</pre>
+<p>Class for managing threads.</p>
+<div class="refsect3">
+<a name="GstRTSPThreadPoolClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="/usr/share/gtk-doc/html/glib/glib-Thread-Pools.html#GThreadPool"><span class="type">GThreadPool</span></a> *<em class="structfield"><code><a name="GstRTSPThreadPoolClass.pool"></a>pool</code></em>;</p></td>
+<td class="struct_member_description"><p>a <a href="/usr/share/gtk-doc/html/glib/glib-Thread-Pools.html#GThreadPool"><span class="type">GThreadPool</span></a> used internally</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPThreadPoolClass.get-thread"></a>get_thread</code></em> ()</p></td>
+<td class="struct_member_description"><p>this function should make or reuse an existing thread that runs
+a mainloop.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPThreadPoolClass.configure-thread"></a>configure_thread</code></em> ()</p></td>
+<td class="struct_member_description"><p>configure a thread object. this vmethod is called when
+a new thread has been created and should be configured.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPThreadPoolClass.thread-enter"></a>thread_enter</code></em> ()</p></td>
+<td class="struct_member_description"><p>called from the thread when it is entered</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPThreadPoolClass.thread-leave"></a>thread_leave</code></em> ()</p></td>
+<td class="struct_member_description"><p>called from the thread when it is left</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GstRTSPThreadPool--max-threads"></a><h3>The <code class="literal">“max-threads”</code> property</h3>
+<pre class="programlisting">  “max-threads”              <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>The maximum amount of threads to use for client connections (0 = only mainloop, -1 = unlimited).</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: 1</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPThreadPool.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GstRTSPMedia.html" title="GstRTSPMedia"><span class="type">GstRTSPMedia</span></a>, <a class="link" href="GstRTSPClient.html" title="GstRTSPClient"><span class="type">GstRTSPClient</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.28</div>
+</body>
+</html>

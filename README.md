@@ -7,7 +7,7 @@ Links:
 * [Shared memory](https://github.com/tik0/mat2gstreamer)
 
 "[GStreamer](https://gstreamer.freedesktop.org/) is a pipeline-based multimedia framework and software that links together a wide variety of media processing systems to complete complex workflows. It contains enormous useful commends to decode, encode, and transport your live video."
-  
+
 ## Goals
 * Minimum 360p and 30 fps live streaming from 2 cameras using 1 Raspberry Pi through RTSP (done!)
 * Ability to control the resolution and frame-rate in real time through SmartDashboard (WIP)
@@ -16,7 +16,7 @@ Links:
 
 ## Hardware
 * 1 Raspberry Pi 4
-* 2 Logitech C920 webcams (or equivalent) 
+* 2 Logitech C920 webcams (or equivalent)
 * 1 Micro-SD card to install Raspbian or Ubuntu Server (preferably at least 16 GB)
 * Power cable and connection that can supply sufficient power to the Pi
 
@@ -25,8 +25,8 @@ Links:
 * Camera placement — will be dependent on drivers. 360p and 30 fps at a minimum should be OK, maybe to make it easier for drivers to see we can outline the balls that should be collected and desaturate the opposing team's colors
 
 ## Documentation
-1. Installing and Setting Up GStreamer -- [InstallSetup.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/InstallSetup.md)
+1. Installing and Setting Up GStreamer -- [install.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/install.md)
 2. Setting up Real Time Streaming Protocol (RTSP) -- [RTSP.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/RTSP.md)
-3. Automating Everything (systemd) -- [Systemd.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/Systemd.md)
+3. Automating Everything (systemd) -- [systemd.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/systemd.md)
 4. Making it interactive with SmartDashboard (in progress) -- [interactive.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/interactive.md)
 5. Ubuntu Server and Installing SRT (on hold) -- [SRT.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/SRT.md)

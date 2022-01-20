@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GstRTSPAuth: GStreamer RTSP Server Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="GStreamer RTSP Server Reference Manual">
+<link rel="up" href="ch01.html" title="">
+<link rel="prev" href="GstRTSPThreadPool.html" title="GstRTSPThreadPool">
+<link rel="next" href="GstRTSPToken.html" title="GstRTSPToken">
+<meta name="generator" content="GTK-Doc V1.28 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GstRTSPAuth.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GstRTSPAuth.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GstRTSPAuth.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GstRTSPThreadPool.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GstRTSPToken.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GstRTSPAuth"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GstRTSPAuth.top_of_page"></a>GstRTSPAuth</span></h2>
+<p>GstRTSPAuth — Authentication and authorization</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GstRTSPAuth.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="returnvalue">GstRTSPAuth</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-new" title="gst_rtsp_auth_new ()">gst_rtsp_auth_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="returnvalue">GTlsCertificate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-get-tls-certificate" title="gst_rtsp_auth_get_tls_certificate ()">gst_rtsp_auth_get_tls_certificate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-set-tls-certificate" title="gst_rtsp_auth_set_tls_certificate ()">gst_rtsp_auth_set_tls_certificate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gio/GTlsDatabase.html#GTlsDatabase-struct"><span class="returnvalue">GTlsDatabase</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-get-tls-database" title="gst_rtsp_auth_get_tls_database ()">gst_rtsp_auth_get_tls_database</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-set-tls-database" title="gst_rtsp_auth_set_tls_database ()">gst_rtsp_auth_set_tls_database</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="returnvalue">GTlsAuthenticationMode</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-get-tls-authentication-mode" title="gst_rtsp_auth_get_tls_authentication_mode ()">gst_rtsp_auth_get_tls_authentication_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-set-tls-authentication-mode" title="gst_rtsp_auth_set_tls_authentication_mode ()">gst_rtsp_auth_set_tls_authentication_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-make-basic" title="gst_rtsp_auth_make_basic ()">gst_rtsp_auth_make_basic</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-add-basic" title="gst_rtsp_auth_add_basic ()">gst_rtsp_auth_add_basic</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-remove-basic" title="gst_rtsp_auth_remove_basic ()">gst_rtsp_auth_remove_basic</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-check" title="gst_rtsp_auth_check ()">gst_rtsp_auth_check</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="returnvalue">GstRTSPToken</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-get-default-token" title="gst_rtsp_auth_get_default_token ()">gst_rtsp_auth_get_default_token</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-set-default-token" title="gst_rtsp_auth_set_default_token ()">gst_rtsp_auth_set_default_token</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a></td>
+<td class="signal_name"><a class="link" href="GstRTSPAuth.html#GstRTSPAuth-accept-certificate" title="The “accept-certificate” signal">accept-certificate</a></td>
+<td class="signal_flags"><a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GstRTSPAuth-struct" title="struct GstRTSPAuth">GstRTSPAuth</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GstRTSPAuthClass" title="struct GstRTSPAuthClass">GstRTSPAuthClass</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-AUTH-CHECK-CONNECT:CAPS" title="GST_RTSP_AUTH_CHECK_CONNECT">GST_RTSP_AUTH_CHECK_CONNECT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-AUTH-CHECK-URL:CAPS" title="GST_RTSP_AUTH_CHECK_URL">GST_RTSP_AUTH_CHECK_URL</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-AUTH-CHECK-MEDIA-FACTORY-ACCESS:CAPS" title="GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS">GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-AUTH-CHECK-MEDIA-FACTORY-CONSTRUCT:CAPS" title="GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT">GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-AUTH-CHECK-TRANSPORT-CLIENT-SETTINGS:CAPS" title="GST_RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS">GST_RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-TOKEN-MEDIA-FACTORY-ROLE:CAPS" title="GST_RTSP_TOKEN_MEDIA_FACTORY_ROLE">GST_RTSP_TOKEN_MEDIA_FACTORY_ROLE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-TOKEN-TRANSPORT-CLIENT-SETTINGS:CAPS" title="GST_RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS">GST_RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-PERM-MEDIA-FACTORY-ACCESS:CAPS" title="GST_RTSP_PERM_MEDIA_FACTORY_ACCESS">GST_RTSP_PERM_MEDIA_FACTORY_ACCESS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GstRTSPAuth.html#GST-RTSP-PERM-MEDIA-FACTORY-CONSTRUCT:CAPS" title="GST_RTSP_PERM_MEDIA_FACTORY_CONSTRUCT">GST_RTSP_PERM_MEDIA_FACTORY_CONSTRUCT</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+    <span class="lineart">╰──</span> GstRTSPAuth
+</pre>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> object is responsible for checking if the current user is
+allowed to perform requested actions. The default implementation has some
+reasonable checks but subclasses can implement custom security policies.</p>
+<p>A new auth object is made with <a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-new" title="gst_rtsp_auth_new ()"><code class="function">gst_rtsp_auth_new()</code></a>. It is usually configured
+on the <a class="link" href="GstRTSPServer.html" title="GstRTSPServer"><span class="type">GstRTSPServer</span></a> object.</p>
+<p>The RTSP server will call <a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-check" title="gst_rtsp_auth_check ()"><code class="function">gst_rtsp_auth_check()</code></a> with a string describing the
+check to perform. The possible checks are prefixed with
+GST_RTSP_AUTH_CHECK_*. Depending on the check, the default implementation
+will use the current <a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a>, <a class="link" href="GstRTSPContext.html" title="GstRTSPContext"><span class="type">GstRTSPContext</span></a> and
+<a class="link" href="GstRTSPPermissions.html" title="GstRTSPPermissions"><span class="type">GstRTSPPermissions</span></a> on the object to check if an operation is allowed.</p>
+<p>The default <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> object has support for basic authentication. With
+<a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-add-basic" title="gst_rtsp_auth_add_basic ()"><code class="function">gst_rtsp_auth_add_basic()</code></a> you can add a basic authentication string together
+with the <a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a> that will become active when successfully
+authenticated.</p>
+<p>When a TLS certificate has been set with <a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-set-tls-certificate" title="gst_rtsp_auth_set_tls_certificate ()"><code class="function">gst_rtsp_auth_set_tls_certificate()</code></a>,
+the default auth object will require the client to connect with a TLS
+connection.</p>
+<p>Last reviewed on 2013-07-16 (1.0.0)</p>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gst-rtsp-auth-new"></a><h3>gst_rtsp_auth_new ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="returnvalue">GstRTSPAuth</span></a> *
+gst_rtsp_auth_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Create a new <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> instance.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-get-tls-certificate"></a><h3>gst_rtsp_auth_get_tls_certificate ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="returnvalue">GTlsCertificate</span></a> *
+gst_rtsp_auth_get_tls_certificate (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>);</pre>
+<p>Get the <a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="type">GTlsCertificate</span></a> used for negotiating TLS <em class="parameter"><code>auth</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-tls-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-tls-certificate.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="type">GTlsCertificate</span></a> of <em class="parameter"><code>auth</code></em>
+. <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> after
+usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-set-tls-certificate"></a><h3>gst_rtsp_auth_set_tls_certificate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_auth_set_tls_certificate (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>,
+                                   <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="type">GTlsCertificate</span></a> *cert</code></em>);</pre>
+<p>Set the TLS certificate for the auth. Client connections will only
+be accepted when TLS is negotiated.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-set-tls-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cert</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="type">GTlsCertificate</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-get-tls-database"></a><h3>gst_rtsp_auth_get_tls_database ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gio/GTlsDatabase.html#GTlsDatabase-struct"><span class="returnvalue">GTlsDatabase</span></a> *
+gst_rtsp_auth_get_tls_database (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>);</pre>
+<p>Get the <a href="/usr/share/gtk-doc/html/gio/GTlsDatabase.html#GTlsDatabase-struct"><span class="type">GTlsDatabase</span></a> used for verifying client certificate.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-tls-database.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-tls-database.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gio/GTlsDatabase.html#GTlsDatabase-struct"><span class="type">GTlsDatabase</span></a> of <em class="parameter"><code>auth</code></em>
+. <a href="/usr/share/gtk-doc/html/gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> after
+usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 1.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-set-tls-database"></a><h3>gst_rtsp_auth_set_tls_database ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_auth_set_tls_database (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gio/GTlsDatabase.html#GTlsDatabase-struct"><span class="type">GTlsDatabase</span></a> *database</code></em>);</pre>
+<p>Sets the certificate database that is used to verify peer certificates.
+If set to <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> (the default), then peer certificate validation will always
+set the <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#G-TLS-CERTIFICATE-UNKNOWN-CA:CAPS"><code class="literal">G_TLS_CERTIFICATE_UNKNOWN_CA</code></a> error.</p>
+<p>Since 1.6</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-set-tls-database.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>database</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gio/GTlsDatabase.html#GTlsDatabase-struct"><span class="type">GTlsDatabase</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-get-tls-authentication-mode"></a><h3>gst_rtsp_auth_get_tls_authentication_mode ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="returnvalue">GTlsAuthenticationMode</span></a>
+gst_rtsp_auth_get_tls_authentication_mode
+                               (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>);</pre>
+<p>Get the <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="type">GTlsAuthenticationMode</span></a>.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-tls-authentication-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-tls-authentication-mode.returns"></a><h4>Returns</h4>
+<p>the <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="type">GTlsAuthenticationMode</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-set-tls-authentication-mode"></a><h3>gst_rtsp_auth_set_tls_authentication_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_auth_set_tls_authentication_mode
+                               (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>,
+                                <em class="parameter"><code><a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="type">GTlsAuthenticationMode</span></a> mode</code></em>);</pre>
+<p>The <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="type">GTlsAuthenticationMode</span></a> to set on the underlying GTlsServerConnection.
+When set to another value than <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#G-TLS-AUTHENTICATION-NONE:CAPS"><code class="literal">G_TLS_AUTHENTICATION_NONE</code></a>,
+<a class="link" href="GstRTSPAuth.html#GstRTSPAuth-accept-certificate" title="The “accept-certificate” signal"><span class="type">“accept-certificate”</span></a> signal will be emitted and must be handled.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-set-tls-authentication-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mode</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsAuthenticationMode"><span class="type">GTlsAuthenticationMode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 1.6</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-make-basic"></a><h3>gst_rtsp_auth_make_basic ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+gst_rtsp_auth_make_basic (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *user</code></em>,
+                          <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pass</code></em>);</pre>
+<p>Construct a Basic authorisation token from <em class="parameter"><code>user</code></em>
+ and <em class="parameter"><code>pass</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-make-basic.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>user</p></td>
+<td class="parameter_description"><p>a userid</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pass</p></td>
+<td class="parameter_description"><p>a password</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-auth-make-basic.returns"></a><h4>Returns</h4>
+<p>the base64 encoding of the string <em class="parameter"><code>user</code></em>
+:<em class="parameter"><code>pass</code></em>
+.
+<a href="/usr/share/gtk-doc/html/glib/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-add-basic"></a><h3>gst_rtsp_auth_add_basic ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_auth_add_basic (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>,
+                         <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *basic</code></em>,
+                         <em class="parameter"><code><a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a> *token</code></em>);</pre>
+<p>Add a basic token for the default authentication algorithm that
+enables the client with privileges listed in <em class="parameter"><code>token</code></em>
+.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-add-basic.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>basic</p></td>
+<td class="parameter_description"><p>the basic token</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>token</p></td>
+<td class="parameter_description"><p>authorisation token. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-remove-basic"></a><h3>gst_rtsp_auth_remove_basic ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_auth_remove_basic (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>,
+                            <em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *basic</code></em>);</pre>
+<p>Removes <em class="parameter"><code>basic</code></em>
+ authentication token.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-remove-basic.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>basic</p></td>
+<td class="parameter_description"><p>the basic token. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-check"></a><h3>gst_rtsp_auth_check ()</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+gst_rtsp_auth_check (<em class="parameter"><code>const <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *check</code></em>);</pre>
+<p>Check if <em class="parameter"><code>check</code></em>
+ is allowed in the current context.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-check.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>check</p></td>
+<td class="parameter_description"><p>the item to check</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-auth-check.returns"></a><h4>Returns</h4>
+<p> FALSE if check failed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-get-default-token"></a><h3>gst_rtsp_auth_get_default_token ()</h3>
+<pre class="programlisting"><a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="returnvalue">GstRTSPToken</span></a> *
+gst_rtsp_auth_get_default_token (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>);</pre>
+<p>Get the default token for <em class="parameter"><code>auth</code></em>
+. This token will be used for unauthenticated
+users.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-default-token.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gst-rtsp-auth-get-default-token.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a> of <em class="parameter"><code>auth</code></em>
+. <a class="link" href="GstRTSPToken.html#gst-rtsp-token-unref" title="gst_rtsp_token_unref ()"><code class="function">gst_rtsp_token_unref()</code></a> after
+usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gst-rtsp-auth-set-default-token"></a><h3>gst_rtsp_auth_set_default_token ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gst_rtsp_auth_set_default_token (<em class="parameter"><code><a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> *auth</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a> *token</code></em>);</pre>
+<p>Set the default <a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a> to <em class="parameter"><code>token</code></em>
+ in <em class="parameter"><code>auth</code></em>
+. The default token will
+be used for unauthenticated users.</p>
+<div class="refsect3">
+<a name="gst-rtsp-auth-set-default-token.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>token</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GstRTSPAuth-struct"></a><h3>struct GstRTSPAuth</h3>
+<pre class="programlisting">struct GstRTSPAuth;</pre>
+<p>The authentication structure.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GstRTSPAuthClass"></a><h3>struct GstRTSPAuthClass</h3>
+<pre class="programlisting">struct GstRTSPAuthClass {
+  GObjectClass  parent_class;
+
+  gboolean           (*authenticate) (GstRTSPAuth *auth, GstRTSPContext *ctx);
+  gboolean           (*check)        (GstRTSPAuth *auth, GstRTSPContext *ctx,
+                                      const gchar *check);
+  void               (*generate_authenticate_header) (GstRTSPAuth *auth, GstRTSPContext *ctx);
+  gboolean           (*accept_certificate) (GstRTSPAuth *auth,
+                                            GTlsConnection *connection,
+                                            GTlsCertificate *peer_cert,
+                                            GTlsCertificateFlags errors);
+};
+</pre>
+<p>The authentication class.</p>
+<div class="refsect3">
+<a name="GstRTSPAuthClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPAuthClass.authenticate"></a>authenticate</code></em> ()</p></td>
+<td class="struct_member_description"><p>check the authentication of a client. The default implementation
+checks if the authentication in the header matches one of the basic
+authentication tokens. This function should set the authgroup field
+in the context.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPAuthClass.check"></a>check</code></em> ()</p></td>
+<td class="struct_member_description"><p>check if a resource can be accessed. this function should
+call authenticate to authenticate the client when needed. The method
+should also construct and send an appropriate response message on
+error.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPAuthClass.generate-authenticate-header"></a>generate_authenticate_header</code></em> ()</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GstRTSPAuthClass.accept-certificate"></a>accept_certificate</code></em> ()</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-AUTH-CHECK-CONNECT:CAPS"></a><h3>GST_RTSP_AUTH_CHECK_CONNECT</h3>
+<pre class="programlisting">#define GST_RTSP_AUTH_CHECK_CONNECT                  "auth.check.connect"
+</pre>
+<p>Check a new connection</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-AUTH-CHECK-URL:CAPS"></a><h3>GST_RTSP_AUTH_CHECK_URL</h3>
+<pre class="programlisting">#define GST_RTSP_AUTH_CHECK_URL                      "auth.check.url"
+</pre>
+<p>Check the URL and methods</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-AUTH-CHECK-MEDIA-FACTORY-ACCESS:CAPS"></a><h3>GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS</h3>
+<pre class="programlisting">#define GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS     "auth.check.media.factory.access"
+</pre>
+<p>Check if access is allowed to a factory.
+When access is not allowed an 404 Not Found is sent in the response.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-AUTH-CHECK-MEDIA-FACTORY-CONSTRUCT:CAPS"></a><h3>GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT</h3>
+<pre class="programlisting">#define GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT  "auth.check.media.factory.construct"
+</pre>
+<p>Check if media can be constructed from a media factory
+A response should be sent on error.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-AUTH-CHECK-TRANSPORT-CLIENT-SETTINGS:CAPS"></a><h3>GST_RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS</h3>
+<pre class="programlisting">#define GST_RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS  "auth.check.transport.client-settings"
+</pre>
+<p>Check if the client can specify TTL, destination and
+port pair in multicast. No response is sent when the check returns
+<a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-TOKEN-MEDIA-FACTORY-ROLE:CAPS"></a><h3>GST_RTSP_TOKEN_MEDIA_FACTORY_ROLE</h3>
+<pre class="programlisting">#define GST_RTSP_TOKEN_MEDIA_FACTORY_ROLE      "media.factory.role"
+</pre>
+<p>G_TYPE_STRING, the role to use when dealing with media factories</p>
+<p>The default <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a> object uses this string in the token to find the
+role of the media factory. It will then retrieve the <a class="link" href="GstRTSPPermissions.html" title="GstRTSPPermissions"><span class="type">GstRTSPPermissions</span></a> of
+the media factory and retrieve the role with the same name.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-TOKEN-TRANSPORT-CLIENT-SETTINGS:CAPS"></a><h3>GST_RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS</h3>
+<pre class="programlisting">#define GST_RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS   "transport.client-settings"
+</pre>
+<p>G_TYPE_BOOLEAN, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the client can specify TTL, destination and
+    port pair in multicast.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-PERM-MEDIA-FACTORY-ACCESS:CAPS"></a><h3>GST_RTSP_PERM_MEDIA_FACTORY_ACCESS</h3>
+<pre class="programlisting">#define GST_RTSP_PERM_MEDIA_FACTORY_ACCESS      "media.factory.access"
+</pre>
+<p>G_TYPE_BOOLEAN, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the media can be accessed, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> will
+return a 404 Not Found error when trying to access the media.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GST-RTSP-PERM-MEDIA-FACTORY-CONSTRUCT:CAPS"></a><h3>GST_RTSP_PERM_MEDIA_FACTORY_CONSTRUCT</h3>
+<pre class="programlisting">#define GST_RTSP_PERM_MEDIA_FACTORY_CONSTRUCT   "media.factory.construct"
+</pre>
+<p>G_TYPE_BOOLEAN, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the media can be constructed, <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> will
+return a 404 Not Found error when trying to access the media.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GstRTSPAuth-accept-certificate"></a><h3>The <code class="literal">“accept-certificate”</code> signal</h3>
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+user_function (<a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a>         *auth,
+               <a href="/usr/share/gtk-doc/html/gio/GTlsConnection.html#GTlsConnection-struct"><span class="type">GTlsConnection</span></a>      *connection,
+               <a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="type">GTlsCertificate</span></a>     *peer_cert,
+               <a href="/usr/share/gtk-doc/html/gio/gio-TLS-Overview.html#GTlsCertificateFlags"><span class="type">GTlsCertificateFlags</span></a> errors,
+               <a href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>             user_data)</pre>
+<p>Emitted during the TLS handshake after the client certificate has
+been received. See also <a class="link" href="GstRTSPAuth.html#gst-rtsp-auth-set-tls-authentication-mode" title="gst_rtsp_auth_set_tls_authentication_mode ()"><code class="function">gst_rtsp_auth_set_tls_authentication_mode()</code></a>.</p>
+<div class="refsect3">
+<a name="GstRTSPAuth-accept-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GstRTSPAuth.html" title="GstRTSPAuth"><span class="type">GstRTSPAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc/html/gio/GTlsConnection.html#GTlsConnection-struct"><span class="type">GTlsConnection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>peer_cert</p></td>
+<td class="parameter_description"><p>the peer's <a href="/usr/share/gtk-doc/html/gio/GTlsCertificate.html#GTlsCertificate-struct"><span class="type">GTlsCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>errors</p></td>
+<td class="parameter_description"><p>the problems with <em class="parameter"><code>peer_cert</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="GstRTSPAuth-accept-certificate.returns"></a><h4>Returns</h4>
+<p> <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to accept <em class="parameter"><code>peer_cert</code></em>
+(which will also
+immediately end the signal emission). <a href="/usr/share/gtk-doc/html/glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to allow the signal
+emission to continue, which will cause the handshake to fail if
+no one else overrides it.</p>
+</div>
+<p>Flags: <a href="/usr/share/gtk-doc/html/gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p class="since">Since: 1.6</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GstRTSPAuth.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="GstRTSPPermissions.html" title="GstRTSPPermissions"><span class="type">GstRTSPPermissions</span></a>, <a class="link" href="GstRTSPToken.html" title="GstRTSPToken"><span class="type">GstRTSPToken</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.28</div>
+</body>
+</html>
