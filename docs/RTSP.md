@@ -1,8 +1,8 @@
-##### Installing RTSP
+## Installing RTSP
 
 What is RTSP? [RTSP, Wikipedia](https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol)
 
-Download and configure the RTSP Server (you can also use the gst-rtsp-server-1.14.4 folder located in this repo)
+Download and configure the RTSP Server (skip to step 4 if you are using gst-rtsp-server-1.14.4 folder located in this repo)
 1. Go to (https://gstreamer.freedesktop.org/src/gst-rtsp-server/), select the Gstreamer version you are using. Copy the URL (it should end in .tar.xz). Use the wget command to download it into your home folder.
 2. Extract the file using tar -xz FILENAME.tar.xz.
 3. In terminal, go to the folder you have extracted (use "cd" command)
@@ -26,7 +26,7 @@ An important point before you start adding more cameras is to check the temperat
 
     /opt/vc/bin/vcgencmd measure_temp | awk -F "[=\']" '{print($2)}'
 
-In order to be able to execute this command while test-launch is running, add  & to the end of the test-launch command. To quit it, type ps, see what the process ID is, and then run kill (PROCESS ID). 
+In order to be able to execute this command while test-launch is running, add  & to the end of the test-launch command. To quit it, type ps, see what the process ID is, and then run kill (PROCESS ID).
 
 ### Modifiying the test-launch.c file
 To use more than one camera, we need to modify the test-launch.c file. Download the test-launch.c file from this GitHub repo and replace the default test-launch.c file with the new file. Then recompile using the same steps from above. To run it, type
@@ -42,3 +42,5 @@ You can access the streams on your viewer computer by opening up two cmd windows
 and
 
     gst-launch-1.0 rtspsrc location=rtsp://(YOUR PI's IP ADDRESS):5800/top latency=0 ! rtph264depay ! decodebin ! autovideosink
+
+  

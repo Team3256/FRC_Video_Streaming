@@ -3,36 +3,68 @@ from networktables import NetworkTable
 import time
 import logging
 import subprocess
+import threading
 logging.basicConfig(level=logging.DEBUG)
 
-NetworkTable.setIPAddress("10.32.56.01") #change IP once known
-NetworkTable.setClientMode()
-NetworkTable.initialize()
 
-sd = NetworkTable.getTable("SmartDashboard")
+# NetworkTable.setIPAddress("10.32.56.01") #change IP once known
+# NetworkTable.setClientMode()
+# NetworkTable.initialize()
+
+# sd = NetworkTable.getTable("SmartDashboard")
 
 
-#read current resolution width and framerate
-f = open("settings.txt", "r")
-resWidth = int(f.readline())
-frameRate = int(f.readline())
+# need to test to make sure it works
+
+cond = threading.Condition()
+notified = [False]
+
+def connectionListener(connected, info):
+    print(info, '; Connected=%s' % connected)
+    with cond:
+        notified[0] = True
+        cond.notify()
+
+NetworkTables.initialize(server='10.xx.xx.2')
+NetworkTables.addConnectionListener(connectionListener, immediateNotify=True)
+
+with cond:
+    print("Waiting")
+    if not notified[0]:
+        cond.wait()
+
+# connected
+sd = NetworkTablesInstance.getTable('SmartDashboard')
+
+
 
 #every second read width and framerate from SmartDashboard, if changed run twoChange.sh
-time.sleep(30) #wait 30 seconds before starting to take input
+time.sleep(15) #wait 30 seconds before starting to take input
 
-while true:
-    time.sleep(5)
+while True:
+    time.sleep(15)
+    #read current resolution width and framerate
+    f = open("settings.txt", "r+")
+    lines = f.readlines()
+    f.seek(0)
+
+    # read smart dashboard values
     sdRes = sd.getNumber('resolution', 360)
     sdFrame = sd.getNumber('framerate', 30)
-    if(sdRes != 360 || sdRes != 240 || sdRes != 480) continue #if "invalid" resolution or framerate values, continue.
-    if(sdFrame != 30 || sdFrame != 20 || sdFrame != 10) continue #change this depending on what presets we want
-    if ((sdRes != resWidth) || (sdFrame != frameRate)): #if either have changed, FIRST change settings.txt, then exit
-        lines = f.readlines()
-        lines[0] = sdRes
-        lines[1] = sdFrame
-        break
 
-subprocess.call("./twoRebuild.sh") #idk if this works but we should test
+    #
+    if(sdRes != 360 and sdRes != 240 and sdRes != 480): continue #if "invalid" resolution or framerate values, continue.
+    if(sdFrame != 30 and sdFrame != 20 and sdFrame != 10): continue #change this depending on what presets we want
+
+
+    if (sdRes != int(lines[0].)) or (sdFrame != int(lines[1])): #if either have changed, FIRST change settings.txt, then exit
+        lines[0] = str(sdRes)
+        lines[1] = str(sdFrame)
+        merge = "\n".join(lines)
+        f.truncate()
+        f.write(merge)
+        f.close()
+        subprocess.call("./twoRestart.sh")
 
 
 #Preset Resolutions: 640x360, 854x480, 426x240

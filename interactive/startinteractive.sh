@@ -1,4 +1,5 @@
 #! /bin/bash
 set -e # Exit if any of the commands below error
 
-python3 oneCheckInput.py
+sleep 5
+python3 oneCheck.py

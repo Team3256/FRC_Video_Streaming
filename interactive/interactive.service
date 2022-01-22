@@ -4,7 +4,7 @@
 Description=Team 3256 Interactive GStreamer Service
 
 [Service]
-ExecStart=/home/pi/interactive/startinteractive.sh #add bash script which links to python script
+ExecStart=/home/pi/interactive/startinteractive.sh 
 KillMode=process
 Restart=on-failure
 RestartSec=5

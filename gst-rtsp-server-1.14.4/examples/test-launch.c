@@ -21,7 +21,9 @@
 #include <gst/gst.h>
 
 #include <gst/rtsp-server/rtsp-server.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #define DEFAULT_RTSP_PORT "8554"
 
 static char *port = (char *) DEFAULT_RTSP_PORT;
@@ -31,6 +33,42 @@ static GOptionEntry entries[] = {
       "Port to listen on (default: " DEFAULT_RTSP_PORT ")", "PORT"},
   {NULL}
 };
+
+const char* gstCombiner (int cameraNumber, int resWidth, int frame)
+{
+  int resHeight = resWidth * 16/9;
+  char height[10000];
+  sprintf(height, "%d", resHeight); //converting height to a string
+
+  char width[10000];
+  sprintf(width, "%d", resWidth); // convert width to a string
+
+  char framerate[1000];
+  sprintf(framerate, "%d", frame); // convert frame to string
+  //resWidth = resolution width (ex: 640), resHeight = resolution height (ex: 360), frame = framerate
+
+  char camera[100];
+  sprintf(camera, "%d", cameraNumber);
+
+  //ADDING CAMERANUMBER
+  char finalReturn[10000] = "( v4l2src device=/dev/video";
+  strcat(finalReturn, camera);
+
+  //ADDING WIDTH
+  strcat(finalReturn,  "! video/x-raw,width=");
+  strcat(finalReturn, height);
+
+  // ADDING HEIGHT
+  strcat(finalReturn, ",height=");
+  strcat(finalReturn, width);
+
+  // ADDING FRAMERATE
+  strcat(finalReturn, ", framerate=");
+  strcat(finalReturn, framerate);
+  strcat(finalReturn, "/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1500 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
+
+  return finalReturn;
+}
 
 int
 main (int argc, char *argv[])
@@ -70,14 +108,24 @@ main (int argc, char *argv[])
    * element with pay%d names will be a stream */
 
   // Please note that the video2 and video0 designations depend on how the system sees the two cameras. These numbers may need to be changed or swapped if the cameras are unplugged or if they change USB ports.
-  // Curerntly these cameras are both plugged into the USB 2.0 ports on the Pi.
+  // Curerntly these cameras are both plugged into the USB 2.0 ports on the Pi
+
+  int inputRes;
+  int inputFrame;
+  FILE *fptr;
+
+  fptr = fopen("/home/pi/interactive/settings.txt","r");   //CHANGE PATH BASED ON SETINGS FILE
+  fscanf(fptr,"%d", &inputRes);
+  fscanf(fptr,"%d", &inputFrame);
+  fclose(fptr);
+
   factory = gst_rtsp_media_factory_new ();
-  gst_rtsp_media_factory_set_launch (factory, "( v4l2src device=/dev/video2 ! video/x-raw,width=640,height=360,framerate=30/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1500 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
+  gst_rtsp_media_factory_set_launch (factory, gstCombiner(2, inputRes, inputFrame));
   gst_rtsp_media_factory_set_shared (factory, TRUE);
   gst_rtsp_mount_points_add_factory (mounts, "/front", factory);
 
   factory = gst_rtsp_media_factory_new ();
-  gst_rtsp_media_factory_set_launch (factory, "( v4l2src device=/dev/video0 ! video/x-raw,width=640,height=360,framerate=30/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1500 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
+  gst_rtsp_media_factory_set_launch (factory, gstCombiner(0, inputRes, inputFrame));
   gst_rtsp_media_factory_set_shared (factory, TRUE);
   gst_rtsp_mount_points_add_factory (mounts, "/top", factory);
 
@@ -91,7 +139,7 @@ main (int argc, char *argv[])
   gst_rtsp_server_attach (server, NULL);
 
   /* start serving */
-  g_print ("stream ready at rtsp://127.0.0.1:%s/test\n", port);
+  g_print ("stream ready at rtsp://127.0.0.1:%s/INSERT YOUR CAMERA NAMES\n", port);
   g_main_loop_run (loop);
 
   return 0;
