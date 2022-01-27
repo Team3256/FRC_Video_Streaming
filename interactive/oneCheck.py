@@ -25,7 +25,7 @@ def connectionListener(connected, info):
         notified[0] = True
         cond.notify()
 
-NetworkTables.initialize(server='10.xx.xx.2')
+NetworkTables.initialize(server='10.32.56.0') #change ip once known
 NetworkTables.addConnectionListener(connectionListener, immediateNotify=True)
 
 with cond:
@@ -57,7 +57,7 @@ while True:
     if(sdFrame != 30 and sdFrame != 20 and sdFrame != 10): continue #change this depending on what presets we want
 
 
-    if (sdRes != int(lines[0].)) or (sdFrame != int(lines[1])): #if either have changed, FIRST change settings.txt, then exit
+    if (sdRes != int(lines[0])) or (sdFrame != int(lines[1])): #if either have changed, FIRST change settings.txt, then exit
         lines[0] = str(sdRes)
         lines[1] = str(sdFrame)
         merge = "\n".join(lines)
