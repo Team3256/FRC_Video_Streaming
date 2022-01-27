@@ -52,7 +52,6 @@ while True:
     sdRes = sd.getNumber('resolution', 360)
     sdFrame = sd.getNumber('framerate', 30)
 
-    #
     if(sdRes != 360 and sdRes != 240 and sdRes != 480): continue #if "invalid" resolution or framerate values, continue.
     if(sdFrame != 30 and sdFrame != 20 and sdFrame != 10): continue #change this depending on what presets we want
 
@@ -69,3 +68,4 @@ while True:
 
 #Preset Resolutions: 640x360, 854x480, 426x240
 #Preset Framerates: 30 fps, 20 fps, 10 fps
+_

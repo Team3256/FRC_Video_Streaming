@@ -55,7 +55,7 @@ const char* gstCombiner (int cameraNumber, int resWidth, int frame)
   strcat(finalReturn, camera);
 
   //ADDING WIDTH
-  strcat(finalReturn,  "! video/x-raw,width=");
+  strcat(finalReturn,  " ! video/x-raw,width=");
   strcat(finalReturn, height);
 
   // ADDING HEIGHT
@@ -63,7 +63,7 @@ const char* gstCombiner (int cameraNumber, int resWidth, int frame)
   strcat(finalReturn, width);
 
   // ADDING FRAMERATE
-  strcat(finalReturn, ", framerate=");
+  strcat(finalReturn, ",framerate=");
   strcat(finalReturn, framerate);
   strcat(finalReturn, "/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1500 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
 
