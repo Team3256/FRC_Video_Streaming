@@ -63,7 +63,7 @@ while True:
         f.truncate()
         f.write(merge)
         f.close()
-        subprocess.call("./twoRestart.sh")
+        subprocess.call("sudo ./twoRestart.sh")
 
 
 #Preset Resolutions: 640x360, 854x480, 426x240

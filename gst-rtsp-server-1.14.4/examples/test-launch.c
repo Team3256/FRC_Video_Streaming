@@ -34,7 +34,7 @@ static GOptionEntry entries[] = {
   {NULL}
 };
 
-const char* gstCombiner (int cameraNumber, int resWidth, int frame)
+char* gstCombiner (int cameraNumber, int resWidth, int frame)
 {
   int resHeight = resWidth * 16/9;
   char height[10000];
@@ -51,7 +51,9 @@ const char* gstCombiner (int cameraNumber, int resWidth, int frame)
   sprintf(camera, "%d", cameraNumber);
 
   //ADDING CAMERANUMBER
-  char finalReturn[10000] = "( v4l2src device=/dev/video";
+  char* finalReturn = malloc(10000);
+  strcat(finalReturn, "( v4l2src device=/dev/video");
+  //char finalReturn[10000] = "( v4l2src device=/dev/video";
   strcat(finalReturn, camera);
 
   //ADDING WIDTH

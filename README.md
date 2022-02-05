@@ -30,3 +30,7 @@ Links:
 3. Automating Everything (systemd) -- [systemd.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/systemd.md)
 4. Making it interactive with SmartDashboard (in progress) -- [interactive.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/interactive.md)
 5. Ubuntu Server and Installing SRT (on hold) -- [SRT.md](https://github.com/Team3256/FRC_Video_Streaming/blob/master/docs/SRT.md)
+
+##To-do
+- Adjusting resolution to anything other than 360p, including 240p and 720p results in an error -- "reason not-negotiated (-4)"
+- Need to fully test w/ SmartDashboard
