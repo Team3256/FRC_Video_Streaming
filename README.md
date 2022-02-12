@@ -1,6 +1,8 @@
 # FRC Video Streaming
 **Live video streaming project based on GStreamer.**
 
+**Master branch:** Stable, only framerate changes.
+
 Links:
 * [Guide to H264 Streaming in FRC](https://rianadon.github.io/blog/2019/04/04/guide-to-h264-streaming-frc.html)
 * [OpenCV and Gstreamer (C++)](https://github.com/tik0/mat2gstreamer)
