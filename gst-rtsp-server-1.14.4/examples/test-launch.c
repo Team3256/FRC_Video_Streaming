@@ -34,14 +34,14 @@ static GOptionEntry entries[] = {
   {NULL}
 };
 
-char* gstCombiner (int cameraNumber, int resWidth, int frame)
+char* gstCombiner (int cameraNumber, int frame)
 {
-  int resHeight = resWidth * 16/9;
-  char height[10000];
-  sprintf(height, "%d", resHeight); //converting height to a string
+  //int resHeight = resWidth * 16/9;
+  //char height[10000];
+  //sprintf(height, "%d", resHeight); //converting height to a string
 
-  char width[10000];
-  sprintf(width, "%d", resWidth); // convert width to a string
+  //char width[10000];
+  //sprintf(width, "%d", resWidth); // convert width to a string
 
   char framerate[1000];
   sprintf(framerate, "%d", frame); // convert frame to string
@@ -57,12 +57,12 @@ char* gstCombiner (int cameraNumber, int resWidth, int frame)
   strcat(finalReturn, camera);
 
   //ADDING WIDTH
-  strcat(finalReturn,  " ! video/x-raw,width=");
-  strcat(finalReturn, height);
+  strcat(finalReturn,  " ! video/x-raw,width=640");
+  //strcat(finalReturn, height);
 
   // ADDING HEIGHT
-  strcat(finalReturn, ",height=");
-  strcat(finalReturn, width);
+  strcat(finalReturn, ",height=360");
+  //strcat(finalReturn, width);
 
   // ADDING FRAMERATE
   strcat(finalReturn, ",framerate=");
@@ -112,22 +112,20 @@ main (int argc, char *argv[])
   // Please note that the video2 and video0 designations depend on how the system sees the two cameras. These numbers may need to be changed or swapped if the cameras are unplugged or if they change USB ports.
   // Curerntly these cameras are both plugged into the USB 2.0 ports on the Pi
 
-  int inputRes;
   int inputFrame;
   FILE *fptr;
 
   fptr = fopen("/home/pi/interactive/settings.txt","r");   //CHANGE PATH BASED ON SETINGS FILE
-  fscanf(fptr,"%d", &inputRes);
   fscanf(fptr,"%d", &inputFrame);
   fclose(fptr);
 
   factory = gst_rtsp_media_factory_new ();
-  gst_rtsp_media_factory_set_launch (factory, gstCombiner(2, inputRes, inputFrame));
+  gst_rtsp_media_factory_set_launch (factory, gstCombiner(2, inputFrame));
   gst_rtsp_media_factory_set_shared (factory, TRUE);
   gst_rtsp_mount_points_add_factory (mounts, "/front", factory);
 
   factory = gst_rtsp_media_factory_new ();
-  gst_rtsp_media_factory_set_launch (factory, gstCombiner(0, inputRes, inputFrame));
+  gst_rtsp_media_factory_set_launch (factory, gstCombiner(0, inputFrame));
   gst_rtsp_media_factory_set_shared (factory, TRUE);
   gst_rtsp_mount_points_add_factory (mounts, "/top", factory);
 

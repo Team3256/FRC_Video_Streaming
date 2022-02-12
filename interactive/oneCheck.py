@@ -49,14 +49,14 @@ while True:
     f.seek(0)
 
     # read smart dashboard values
-    sdRes = sd.getNumber('resolution', 360)
+    # sdRes = sd.getNumber('resolution', 360)
     sdFrame = sd.getNumber('framerate', 30)
 
-    if(sdRes != 360 and sdRes != 240 and sdRes != 480): continue #if "invalid" resolution or framerate values, continue.
+    # if(sdRes != 360 and sdRes != 240 and sdRes != 480): continue #if "invalid" resolution or framerate values, continue.
     if(sdFrame != 30 and sdFrame != 20 and sdFrame != 10): continue #change this depending on what presets we want
 
 
-    if (sdRes != int(lines[0])) or (sdFrame != int(lines[1])): #if either have changed, FIRST change settings.txt, then exit
+    if ((sdFrame != int(lines[1])): #if either have changed, FIRST change settings.txt, then exit
         lines[0] = str(sdRes)
         lines[1] = str(sdFrame)
         merge = "\n".join(lines)
