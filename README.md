@@ -1,5 +1,6 @@
 # FRC Video Streaming
 **Live video streaming project based on GStreamer.**
+**hardwareencoding branch:** working on native h.264 encoding on the C920 webcam
 
 Links:
 * [Guide to H264 Streaming in FRC](https://rianadon.github.io/blog/2019/04/04/guide-to-h264-streaming-frc.html)
