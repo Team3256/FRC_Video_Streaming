@@ -8,5 +8,4 @@ killall -9 test-launch
 #reboot gstreamer
 cd /home/pi/
 sudo ./startstreaming.sh
-#make
 #reboot
