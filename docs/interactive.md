@@ -3,7 +3,7 @@ GOAL: Make the Gstreamer settings (notably resolution and framerate) interactive
 # Framework:
 We will create a new systemd service that calls a Python script which continuously checks the SmartDashboard variable for resolution (width) and framerate to detect if they have changed.
 
- The script will then restart gstreamer.
+The script will then restart gstreamer if changes are detected.
 
 # Files (leave all of these EXCEPT for interactive.service in /home/pi/interactive)
 **oneCheck.py -->** python script that will continuously check the SmartDashboard variables. edits the settings.txt file if parameters have changed.

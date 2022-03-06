@@ -1,30 +1,30 @@
 
 ## Setup
 
-### 1. Install Raspbian Lite
+### 1. Install Raspbian
 [Raspbian System Installation](https://www.raspberrypi.org/documentation/installation/installing-images/)
 
 ### 2. Install and Configure GStreamer (on both server and client)
 
 #### Windows
 
-Make sure that the 2015, 2017, and 2019 Visual C++ runtimes are installed PRIOR to installation! [Download Visual C++ Runtime Libraries -- BOTH x64 and x86 but not ARM64](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0)
+Install the 2015, 2017, and 2019 Visual C++ runtimes: [Download Visual C++ Runtime Libraries -- BOTH x64 and x86 but not ARM64](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0)
 
-Use this guide to install Chocolatey (https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey) *Select basic Chocolatey install* to install Chocolatey using cmd.exe, and then type:
+Install Chocolatey (https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey) *Select basic Chocolatey install*. After it's installed, type:
 
     choco install gstreamer
 
-Then reboot. You should be able to type both gst-launch-1.0 and gst-inspect-1.0 into cmd and they should both work.
+Follow the instructions to refresh your environment variables. Type gst-launch-1.0 --version. If you see a version number listed, it works!
 
 #### macOS
-You can install Gstreamer using Homebrew.
+You can install GStreamer using Homebrew.
 
 #### Linux (Raspbian) - assuming a brand new installation
 1. Change your default user password. Type passwd, and follow the prompts to change your password, then reboot.
 
 2. Next, enable SSH (or VNC if using regular Raspbian) so you can access the pi from another system using a program like PuTTY. Type sudo raspi-config, and go to Interfacing Options, and enable SSH and/or VNC. Then, go to the network settings and input the WiFi network name you want to connect to.
 
-Run ifconfig to check your IP address, and you can use PuTTY to connect to it via SSH.
+Run ifconfig to check your IP address, and you can use PuTTY to connect to it via SSH or RealVNC to connect using VNC.
 
 We need to make sure the version of Raspbian is completely up to date. Run:
 
@@ -40,14 +40,12 @@ Use
 
      gst-inspect-1.0 --version
 
-To check the GStreamer version.
+to check the GStreamer version.
 
 GStreamer is now installed!
 
 ## Testing
-A lot of this is based upon the guide from the first link above, so you can read that while you are reading through this.
-
-First, you can do a basic test on your Windows system to verify that Gstreamer is working. Type
+To verify that Gstreamer is working, type:
     gst-launch-1.0 videotestsrc ! videoconvert ! autovideosink
 If you see some test tones, it works!
 
@@ -61,7 +59,7 @@ On your viewer PC type:
 
 If you see the test tones on your PC, that means that the videotestsrc is successfully being streamed from the Raspberry Pi to your Windows PC!
 
-Now, the ultimate test: outputting your camera feed over the network. Insert your camera into the USB port, and then run the below command on your Pi:
+Now, insert your camera into the USB port, and then run the following command on your Pi:
 
     gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,width=640,height=480,framerate=30/1 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264,profile=high ! mpegtsmux ! tcpserversink host=((INSERT YOUR IP ADDRESS HERE)) port=5000
 
@@ -69,4 +67,4 @@ And on your PC, run:
 
     gst-launch-1.0 tcpclientsrc host=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
 
-If you see what your camera sees, it works! It is expected that there will be some delay since we are streaming over TCP, but if you can see your stream it is considered successful.
+There will be some delay since it's are streaming over TCP, but it's good enough if you can see what your camera sees.

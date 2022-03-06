@@ -1,5 +1,3 @@
-# location: /etc/systemd/system/streaming.service
-
 [Unit]
 Description=Team 3256 Camera Streaming
 
@@ -10,7 +8,7 @@ Restart=on-failure
 RestartSec=5
 RestartPreventExitStatus=255
 Type=simple
-WorkingDirectory=/home/pi/ #make sure this is the directory where the .sh file is located!!!
+WorkingDirectory=/home/pi/
 
 [Install]
 WantedBy=multi-user.target
