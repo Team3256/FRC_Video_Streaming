@@ -1,8 +1,10 @@
-
 ## Setup
+This guides you through setting up the pi for GStreamer and installing GStreamer on your viewer PC.
 
 ### 1. Install Raspbian
 [Raspbian System Installation](https://www.raspberrypi.org/documentation/installation/installing-images/)
+
+IMPORTANT: If using the GUI version, make sure that it is configured to run headless or else it won't boot correctly w/out a display attached ([HDMI hotplug](https://www.shellhacks.com/raspberry-pi-force-hdmi-hotplug/)).
 
 ### 2. Install and Configure GStreamer (on both server and client)
 
@@ -17,16 +19,18 @@ Install Chocolatey (https://community.chocolatey.org/courses/installation/instal
 Follow the instructions to refresh your environment variables. Type gst-launch-1.0 --version. If you see a version number listed, it works!
 
 #### macOS
-You can install GStreamer using Homebrew.
+You can install GStreamer using Homebrew similarly to Chocolatey.
 
 #### Linux (Raspbian) - assuming a brand new installation
-1. Change your default user password. Type passwd, and follow the prompts to change your password, then reboot.
+1. Change your default user password. (IF LITE) Type passwd, and follow the prompts to change your password, then reboot. If
 
-2. Next, enable SSH (or VNC if using regular Raspbian) so you can access the pi from another system using a program like PuTTY. Type sudo raspi-config, and go to Interfacing Options, and enable SSH and/or VNC. Then, go to the network settings and input the WiFi network name you want to connect to.
+2. Next, enable SSH (or VNC if using Raspbian w/ GUI) so you can access the pi w/out a display using PuTTY or RealVNC. Type sudo raspi-config, and go to Interfacing Options, and enable SSH and/or VNC. Then, go to the network settings and input the WiFi network name you want to connect to.
 
-Run ifconfig to check your IP address, and you can use PuTTY to connect to it via SSH or RealVNC to connect using VNC.
+IMPORTANT: For initial setup, it's recommended to create your own WiFi hotspot to connect to the pi to. It cannot connect to the main VCS network, and using VCS Guest can be cumbersome since it forces you to log in every so often. Once you have finished setting up, you should disable the hotspot and connect the pi to the robot's WiFi.
 
-We need to make sure the version of Raspbian is completely up to date. Run:
+Run ifconfig to check your IP address, and you can use PuTTY to connect to it via SSH or RealVNC to connect using VNC. If you're on Windows, you can also use [Angry IP Scanner](https://angryip.org) to scan for specific open ports (such as 22 for SSH).
+
+Update Raspbian:
 
      sudo apt update
 
@@ -55,7 +59,7 @@ Next, you should test streaming the videotestsrc over the network. On your pi, t
 
 On your viewer PC type:
 
-    gst-launch-1.0 tcpclientsrc host=((SAME IP AS YOUR RASBERRY PI)) port=5000 ! decodebin ! autovideosink
+    gst-launch-1.0 tcpclientsrc host=((SAME IP AS YOUR PI)) port=5000 ! decodebin ! autovideosink
 
 If you see the test tones on your PC, that means that the videotestsrc is successfully being streamed from the Raspberry Pi to your Windows PC!
 
@@ -63,8 +67,10 @@ Now, insert your camera into the USB port, and then run the following command on
 
     gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,width=640,height=480,framerate=30/1 ! videoconvert ! x264enc tune=zerolatency ! video/x-h264,profile=high ! mpegtsmux ! tcpserversink host=((INSERT YOUR IP ADDRESS HERE)) port=5000
 
+You may need to change the number next to video (video0, video1, video2) until you get the correct number for the camera.
+
 And on your PC, run:
 
     gst-launch-1.0 tcpclientsrc host=((INSERT YOUR IP ADDRESS HERE)) port=5000 ! decodebin ! autovideosink
 
-There will be some delay since it's are streaming over TCP, but it's good enough if you can see what your camera sees.
+There will be some delay since it's streaming over TCP, which is why we are using RTSP.
