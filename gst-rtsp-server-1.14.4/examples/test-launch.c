@@ -67,7 +67,7 @@ char* gstCombiner (int cameraNumber, int frame)
   // ADDING FRAMERATE
   strcat(finalReturn, ",framerate=");
   strcat(finalReturn, framerate);
-  strcat(finalReturn, "/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=1000 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
+  strcat(finalReturn, "/1 ! videoconvert ! video/x-raw,format=I420 ! x264enc tune=zerolatency bitrate=750 threads=1 ! rtph264pay config-interval=1 name=pay0 pt=96 )");
 
   return finalReturn;
 }
