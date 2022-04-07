@@ -38,11 +38,11 @@ sd = NetworkTablesInstance.getTable('Video') #change if needed
 
 
 
-#every second read width and framerate from SmartDashboard, if changed run twoChange.sh
-time.sleep(15) #wait 30 seconds before starting to take input
+time.sleep(15) #wait 15 seconds before starting to take input
 
 
 
+#every 15 seconds read width and framerate from SmartDashboard
 while True:
     time.sleep(15)
     #read current resolution width and framerate
@@ -52,11 +52,11 @@ while True:
 
     # read smart dashboard values
     # sdRes = sd.getNumber('resolution', 360)
-    sdFrame = sd.getNumber('framerate', 30)
+    sdFrame = sd.getNumber('framerate', 15)
     sd.putBoolean('isUpdated', true); # ensures that data has been received by the pi. true = up to date, false = updating
 
     # if(sdRes != 360 and sdRes != 240 and sdRes != 480): continue #if "invalid" resolution or framerate values, continue.
-    if(sdFrame != 30 and sdFrame != 20 and sdFrame != 10): continue #change this depending on what presets we want
+    if(sdFrame != 30 and sdFrame != 20 and sdFrame != 10 and sdFrame != 15): continue #change this depending on what presets we want
 
 
     if ((sdFrame != int(lines[0])): #if either have changed, FIRST change settings.txt, then exit
@@ -68,6 +68,3 @@ while True:
         f.write(merge)
         f.close()
         subprocess.call("sudo ./twoRestart.sh")
-
-#Preset Framerates: 30 fps, 20 fps, 10 fps
-_
