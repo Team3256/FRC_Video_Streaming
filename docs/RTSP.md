@@ -4,7 +4,7 @@ What is RTSP? [RTSP, Wikipedia](https://en.wikipedia.org/wiki/Real_Time_Streamin
 
 Download and configure the RTSP Server (skip to step 4 if you are using gst-rtsp-server-1.14.4 folder located in this repo)
 1. Go to (https://gstreamer.freedesktop.org/src/gst-rtsp-server/), select the Gstreamer version you are using. Copy the URL (it should end in .tar.xz). Use the wget command to download it into your home folder.
-2. Extract the file using tar -xz FILENAME.tar.xz.
+2. Extract the file using tar -xf FILENAME.tar.xz.
 3. In terminal, go to the folder you have extracted (use "cd" command)
 4. Type ./configure
 5. Once you are finished, type make
